@@ -5,7 +5,7 @@
 -- izrada tablice Osobe
 
 --create table Osobe(
---sifraosoba int,
+--sifraosoba int primary key,
 --Ime varchar(30),
 --Prezime varchar(30),
 --Email varchar(50)
@@ -14,7 +14,7 @@
 -- izrada tablice Vozila
 
 --create table Vozila(
---sifravozila int,
+--sifravozila int primary key,
 --Marka varchar(100),
 --Vrstagoriva varchar(10),
 --Oblikkaroserije varchar(20),
