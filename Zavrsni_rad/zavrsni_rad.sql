@@ -1,41 +1,45 @@
--- create database zavrsni_rad;
+--use master;
+--go
+
+--drop database  if exists zavrsni_rad;
+--go
+
+--create database zavrsni_rad;
+--go
 
 --use zavrsni_rad;
+--go
+
 
 -- izrada tablice Osobe
 
 --create table Osobe(
---sifraosoba int primary key,
---Ime varchar(30),
---Prezime varchar(30),
---Email varchar(50)
+--sifraosoba int primary key not null identity(1,1),
+--Ime varchar(30) not null,
+--Prezime varchar(30) not null,
+--Email varchar(50) not null
 --);
 
 -- izrada tablice Vozila
 
 --create table Vozila(
---sifravozila int primary key,
---Marka varchar(100),
---Vrstagoriva varchar(10),
---Oblikkaroserije varchar(20),
---Prvaregistracija int,
---Godinaproizvodnje int,
---Datumprveregistracije date,
---Prijenos varchar(8),
---Potrosnja varchar(15),
---Boja varchar(20),
+--sifravozila int primary key not null identity(1,1),
+--Marka varchar(100) not null,
 --Opisvozila varchar(100),
---Vlasnik varchar(10),
 --Cijena decimal(10,2)
 --);
 
 -- izrada tablice Termini
 
 --create table Termini(
---Osobe int,
---Vozila int
+--sifratermina int primary key not null identity(1,1),
+--Osobe int not null,
+--Vozila int not null
 --);
 
 
+-- dodavanje foreign keya
 
+--alter table Termini add foreign key (Osobe) references Osobe(sifraosoba);
+--alter table Termini  add foreign key (Vozila) references Vozila(sifravozila);
 
