@@ -1,38 +1,43 @@
-﻿-- ovo je linija koja se neće izvesti
--- create database edunovawp6;
+﻿
+use master;
+go
+drop database if exists edunovawp5;
+go
+create database edunovawp5;
+go
+use edunovawp5;
 
---drop database edunovawp6;
+create table smjerovi(
+sifra int not null primary key identity(1,1),
+naziv varchar(50) not null,
+cijena decimal(18,2) null, --ali se null ne piše, jer se to avtomaski zna
+brojsati int,
+izvodiseod datetime,
+vaucer bit
+);
 
+create table grupe(
+sifra int not null primary key identity(1,1),
+naziv varchar(20) not null,
+brojslobodnihmjesta int not null,
+datumpocetka datetime,
+smjer int not null,
+predavac varchar(50)
+);
 
--- use edunovawp5;
+create table polaznici(
+sifra int not null primary key identity(1,1),
+ime varchar(50) not null,
+prezime varchar(50) not null,
+email varchar(100),
+oib char(11)
+);
 
---create table smjerovi(
---sifra int,
---naziv varchar(50),
---cijena decimal(18,2),
---brojsati int,
---izvodiseod datetime,
---vaucer bit
---);
+create table clanovi(
+grupa int not null,
+polaznik int not null
+);
 
---create table grupe(
---sifra int,
---naziv varchar(20),
---brojslobodnihmjesta int,
---datumpocetka datetime,
---smjer int,
---predavac varchar(50)
---);
-
---create table polaznici(
---sifra int,
---ime varchar(50),
---prezime varchar(50),
---email varchar(100),
---oib char(11)
---);
-
---create table clanovi(
---grupa int,
---polaznik int
---);
+alter table grupe add foreign key (smjer) references smjerovi (sifra);
+alter table clanovi add foreign key (grupa) references grupe (sifra);
+alter table clanovi add foreign key (polaznik) references polaznici (sifra);
