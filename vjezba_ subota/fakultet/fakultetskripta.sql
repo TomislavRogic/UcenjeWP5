@@ -1,6 +1,10 @@
 ﻿ create database fakultet;
+ go
+
+ --drop database if exists fakultet;
 
  use fakultet;
+ go
 
 -- izrada tablice Ispitni rok
 
@@ -11,6 +15,7 @@ vrstaispita varchar(50) not null,
 datum date,
 pristupio varchar(50) not null
 );
+go
 
 --drop table if exists Ispitnirok;
 
@@ -19,12 +24,14 @@ pristupio varchar(50) not null
 create table Pristupnici (
 Ispitnirok int not null,
 Student varchar(50) not null,
-Brojbodova varchar(3) not null,
-Ocjena char(1) not null
+Brojbodova int not null,
+Ocjena int not null
 );
---drop table if exists Pristupnici;
+go
+ --drop table if exists Pristupnici;
 
 alter table Pristupnici add foreign key (Ispitnirok) references Ispitnirok(sifra);
+go
 
 select * from Ispitnirok;
 
@@ -41,6 +48,9 @@ insert into Pristupnici (Ispitnirok,Student,Brojbodova,Ocjena) values
 (2,'Tomislav Rogic',50,2),
 (3,'Tomislav Rogic',60,3),
 (4,'Tomislav Rogic',55,3);
+
+
+
 
 
 
