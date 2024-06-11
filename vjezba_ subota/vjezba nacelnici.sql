@@ -1,9 +1,28 @@
-﻿create database bazaopcine;
-use bazaopcine;
+﻿USE master;
+GO
 
-create table Načelnici(
-sifra int primary key not null identity(1,1),
-Ime varchar(50) not null,
-Prezime varchar (50) not null,
-Datumrodenja date
+CREATE DATABASE bazaopcine;
+GO
+
+USE bazaopcine;
+GO
+
+CREATE TABLE Nacelnici (
+    sifra INT PRIMARY KEY IDENTITY(1,1),
+    Ime VARCHAR(50) NOT NULL,
+    Prezime VARCHAR(50) NOT NULL,
+    Datumrodenja DATE
 );
+GO
+
+-- Prikaz svih podataka iz tablice Nacelnici
+SELECT * FROM Nacelnici;
+
+-- Umetanje podataka u tablicu Nacelnici
+INSERT INTO Nacelnici (Ime, Prezime, Datumrodenja) VALUES
+('Marko', 'Peric', '1954-05-06'),
+('Luka', 'Simin', '1982-02-25'),
+('Ivo', 'Lole', '1961-12-21');
+GO
+
+
