@@ -32,7 +32,8 @@ select * from polaznici;
 
 -- kako promjeniti oib
 
-update polaznici set oib= '00653662367' where sifra=1;
+update polaznici set oib= 'NULL' where sifra=1;
+
 
 select * from grupe;
 
