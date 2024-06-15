@@ -4,7 +4,7 @@ go
 drop database  if exists zavrsni_rad;
 go
 
-create database zavrsni_rad;
+create database zavrsni_rad collate Croatian_CI_AS;
 go
 
 use zavrsni_rad;
@@ -19,7 +19,7 @@ Ime varchar(30) not null,
 Prezime varchar(30) not null,
 Email varchar(50) not null
 );
-go
+
 
 -- izrada tablice Vozila
 
@@ -29,7 +29,7 @@ Marka varchar(100) not null,
 Opisvozila varchar(100),
 Cijena decimal(10,3)
 );
-go
+
 
 -- izrada tablice Termini
 
@@ -39,7 +39,7 @@ Osobe int not null,
 Vozila int not null,
 Termin smalldatetime
 );
-go
+
 
 
  --dodavanje foreign keya
@@ -50,7 +50,7 @@ go
 
 -- dodavanje podataka u tablicu Osobe
 
-select * from Osobe;
+
 insert into Osobe (Ime,Prezime,Email) values
 ('Tomislav','Rogic','tomislav.rogic@gmail.com'),
 ('Kristina','Andric','kristinaadric13@gmail.com'),
@@ -58,23 +58,22 @@ insert into Osobe (Ime,Prezime,Email) values
 ('Markus','Walter','markus13@gmail.com'),
 ('Pierce','Brosnan','pierce.brosnan@gmail.com'),
 ('Milan','Prodanovic','milan.prodanovic@gmail.com');
-go
-
+select * from Osobe;
 
 --dodavanje podataka u tablicu Vozila
 
-select * from Vozila;
+
 
 insert into Vozila (Marka,Opisvozila,Cijena) values
 ('Opel Mokka','2.2, dizel, 2017. godina, crna, 113.000 km, 5 sjedala, R17, prvi vlasnik',20.200),
 ('Bmw X4','3.0, dizel, 2021.godina, bijela, 32.000 km, 5 sjedala, R 19, prvi vlasnik', 30.800),
 ('Audi A4','2.2, dizel, 2020. godina, plava, 100.000 km, 5 sjedala, R 17, prvi vlasnik', 25.000),
 ('Mazda CX5','2.2, benzin, 2021. godina, bijela, 54.000 km, 5 sjedala, R 19, prvi vlasnik',30.500);
-go
+select * from Vozila;
 
 -- dodavanje podataka u tablicu Termini
 
-select * from Termini;
+
 
 insert into Termini (Osobe,Vozila,Termin) values
 (1,1,'2024-06-10 10:00'),
@@ -83,4 +82,4 @@ insert into Termini (Osobe,Vozila,Termin) values
 (6,3,'2024-06-10 15:00'),
 (5,2,'2024-06-11 09:30'),
 (4,2,'2024-06-11 11:30');  
-go
+select * from Termini;

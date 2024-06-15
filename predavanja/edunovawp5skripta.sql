@@ -2,7 +2,7 @@
 go
 drop database if exists edunovawp5;
 go
-create database edunovawp5;
+create database edunovawp5 collate Croatian_CI_AS;
 go
 use edunovawp5;
 
@@ -69,7 +69,7 @@ values ('WP5',26,1);
 insert into grupe(naziv,brojslobodnihmjesta,smjer)
 values ('WD1',16,2);
 
--- select * from polaznici;
+select * from polaznici;
 --1 do 30
 
 insert into polaznici(prezime,ime,email) values
