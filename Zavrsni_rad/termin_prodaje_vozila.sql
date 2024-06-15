@@ -1,4 +1,4 @@
-use master;
+﻿use master;
 go
 
 drop database  if exists zavrsni_rad;
@@ -6,7 +6,7 @@ go
 
 create database zavrsni_rad collate Croatian_CI_AS;
 go
-
+-- collate Croatian_CI_AS dodajemo kako bi imali slova č,ž,ć
 use zavrsni_rad;
 go
 
