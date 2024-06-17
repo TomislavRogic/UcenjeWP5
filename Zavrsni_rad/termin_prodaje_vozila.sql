@@ -1,15 +1,24 @@
 ﻿use master;
 go
 
-drop database  if exists zavrsni_rad;
+drop database  if exists termin_prodaje_vozila;
 go
 
-create database zavrsni_rad collate Croatian_CI_AS;
+-- popis svih collate za hrvatski jezik
+--SELECT name, description
+--FROM sys.fn_helpcollations()
+--WHERE name LIKE '%Croatian%';
+
+create database termin_prodaje_vozila collate Croatian_CI_AS;
 go
 -- collate Croatian_CI_AS dodajemo kako bi imali slova č,ž,ć
-use zavrsni_rad;
+-- Croatian znaci da koristimo hrvatsku jezicnu kulturu
+-- CI znaci case insensitive odnosno da se velika i mala slova tretiraju kao isti, isto ce se smatrati i A i a
+-- AS-- accent sensitive (osjetljivost na akcente)- znaci č i ć ce se smatrati razlicitima
+use termin_prodaje_vozila;
 go
 
+-- primary key uvijek mora biti int
 
  --izrada tablice Osobe
 
@@ -43,6 +52,7 @@ Termin smalldatetime
 
 
  --dodavanje foreign keya
+ -- primary key uvijek mora biti int
 
 alter table Termini add foreign key (Osobe) references Osobe(sifraosoba);
 alter table Termini  add foreign key (Vozila) references Vozila(sifravozila);
@@ -52,12 +62,12 @@ go
 
 
 insert into Osobe (Ime,Prezime,Email) values
-('Tomislav','Rogic','tomislav.rogic@gmail.com'),
-('Kristina','Andric','kristinaadric13@gmail.com'),
+('Tomislav','Rogić','tomislav.rogic@gmail.com'),
+('Kristina','Andrić','kristinaadric13@gmail.com'),
 ('Hans', 'Grubner','hans.grubner@siol.at'),
 ('Markus','Walter','markus13@gmail.com'),
 ('Pierce','Brosnan','pierce.brosnan@gmail.com'),
-('Milan','Prodanovic','milan.prodanovic@gmail.com');
+('Milan','Prodanović','milan.prodanovic@gmail.com');
 select * from Osobe;
 
 --dodavanje podataka u tablicu Vozila
