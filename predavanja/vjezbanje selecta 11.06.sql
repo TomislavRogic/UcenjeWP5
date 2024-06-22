@@ -113,3 +113,8 @@ select * from polaznici where sifra between 2 and 8;
 select * from smjerovi where izvodiseod=null;
  -- pravilno se pise
  select * from smjerovi where izvodiseod is null;
+
+ select * from Artikli
+ select count(cijena) from artikli where cijena between 1000 and 1100;
+
+ select * from Artikli where cijena between 1000 and 1100 ;

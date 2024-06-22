@@ -206,6 +206,9 @@ group by c.naziv
 having min(a. kolicina * a.cijena) > 0
 order by 3 desc,  2 desc;
 
+
+select * from mjesta where naziv like 'spli%' ;
+
 select * from ArtikliNaPrimci
 
 select * from primke;
