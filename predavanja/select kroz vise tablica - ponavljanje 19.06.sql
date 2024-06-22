@@ -1,4 +1,6 @@
-﻿select * from grupe;
+﻿use edunovawp5;
+
+select * from grupe;
 
 select * from smjerovi where sifra=1;
 
@@ -109,6 +111,26 @@ having count(b.polaznik)>5;
 
 use svastara;
 
+select naziv from zupanije where sifra = 14;
+
+select a.naziv as Naziv_mjesta, c.naziv as Zupanija
+from mjesta a inner join Opcine b
+on a.opcina = b.sifra
+inner join Zupanije c
+on b.zupanija = c.sifra
+where c.sifra =14
+order by 1;
+
+select b.naziv as Naziv_opcine, count (a.sifra) as ukupan_broj_mjesta
+from mjesta a inner join Opcine b
+on a.opcina = b.sifra
+inner join Zupanije c
+on b.zupanija = c.sifra
+where c.sifra =14
+group by b.naziv
+order by 2 desc;
+
+
 -- zelimo vidjeti sve nazive mjesta u osjeckoj baranjskoj zupaniji
 -- naziv mjesta se nalazi u tablici mjesta a naziv zupanije u zupanije
 -- moramo spojiti tablice zupanije, opcine i mjesta
@@ -168,6 +190,26 @@ order by 2 desc;
 -- treba paziti da ubacimo group jer inace naredba nece raditi
 -- kada zelimo nesto zbrojiti ili izvaditi prosjek
 -- inace bi program pokusao zbrojiti sve vrijednosti ne razdvajajuci ih prema dobavljacu
+
+select * from ArtikliNaPrimci
+
+select top 5 c.naziv as naziv_dobavljaca, 
+sum(a. kolicina * a.cijena) as ukupna_cijena,
+min(a. kolicina * a.cijena) as minimalna_cijena, 
+max (a. kolicina * a.cijena) as maksimalna_cijena
+from ArtikliNaPrimci a inner join Primke b
+on a.primka = b.sifra
+inner join dobavljaci c
+on b.dobavljac = c.sifra
+where b.datum between '2017-01-01' and '2017-12-31'
+group by c.naziv
+having min(a. kolicina * a.cijena) > 0
+order by 3 desc,  2 desc;
+
+select * from ArtikliNaPrimci
+
+select * from primke;
+
 
 -- ako zelimo vidjeti minimalno
 select a.naziv, 
