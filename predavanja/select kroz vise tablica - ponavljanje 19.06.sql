@@ -307,9 +307,19 @@ select * from kupci where prezime = 'Rogic' and ime = 'Tomislav';
 select naziv, count(*) 
 from  mjesta
 group by naziv
+order by 1;
 having count (*) > 1
 order by 2 desc;
 
+-- provjera koliko se puta ponavljala koja primka u tablici artiklinaprimci
+select primka, count(*) from ArtikliNaPrimci
+group by primka
+order by 1
+
+-- selektiranje primke 14- vidimo da ima 88 redova isto koliko je pokazala i gornja tablica
+select * from ArtikliNaPrimci where primka = 14
+group by primka
+order by 1
 
 
 
