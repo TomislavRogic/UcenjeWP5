@@ -124,4 +124,4 @@ select*from neprijatelj;
 -- drugiputa iz tablice cura poznate te da su vrijednosti kolone vesta iz
 -- tablice decko sadrže niz znakova ba. Podatke posložite po haljina iz
 -- tablice neprijatelj silazno. select f.novcica, a.neprijateljfrom brat a inner join neprijatelj b on a.neprijatelj = b.sifrainner join cura c on b.cura = c.sifrainner join decko d on c.decko = d.sifrainner join decko_zarucnica e on d.sifra = e.deckoinner join zarucnica f on e.zarucnica = f.sifrawhere c.drugiputa is not null and d.vesta like '%ba%'order by b.haljina desc;-- Prikažite kolone vesta i asocijalno iz tablice decko čiji se primarni
--- ključ ne nalaze u tablici decko_zarucnica. select*from decko;select*from decko_zarucnica;select a.vesta, a.asocijalnofrom decko a left join decko_zarucnica b on a.sifra = b.deckowhere b.decko  != a.sifra 
+-- ključ ne nalaze u tablici decko_zarucnica. select*from decko;select*from decko_zarucnica;select a.vesta, a.asocijalnofrom decko a left join decko_zarucnica b on a.sifra = b.deckowhere b.decko is null
