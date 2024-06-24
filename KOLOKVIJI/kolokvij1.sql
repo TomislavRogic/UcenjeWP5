@@ -154,14 +154,17 @@ select kratkamajica from zena where hlace like '%ana%';
 -- prikazati dukserica iz tablice svekar, socijalno iu tablice mladic te hlace iz tablice muskarac -- uvjet hlace u zena pocinje a, haljina u sestra sadrze ba
 --posloziti po hlace muskarac silazno
 
-select f.dukserica, d.asocijalno, b.hlace, a.haljina
+
+select f.dukserica, d.asocijalno, c.hlace
 from sestra a inner join zena b on a.sifra = b.sestra
 inner join muskarac c on b.sifra = c.zena
-left join mladic d on c.sifra = d.muskarac
+inner join mladic d on c.sifra = d.muskarac
 inner join sestra_svekar e on a.sifra = e.sestra
 inner join svekar f on f.sifra = e.svekar
-where b.hlace like 'a%' and a.haljina like '%ba%';
+where b.hlace like 'a%' and a.haljina like '%ba%'
+order by c.hlace;
 -- ovo nisam rijesio
+
 
 
 -- prikazati kolone haljina i maraka iz sestra ciji primarni kljuc se ne nalazi u tablici sestra_svekar
