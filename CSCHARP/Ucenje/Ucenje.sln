@@ -5,6 +5,8 @@ VisualStudioVersion = 17.10.34902.84
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UcenjeCS", "UcenjeCS\UcenjeCS.csproj", "{FE8549E9-406F-43C9-814E-7AA62862C9DC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI", "WebAPI\WebAPI.csproj", "{6BA8CADC-AAEE-4E59-9DC9-2B57E223460A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{FE8549E9-406F-43C9-814E-7AA62862C9DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE8549E9-406F-43C9-814E-7AA62862C9DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE8549E9-406F-43C9-814E-7AA62862C9DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BA8CADC-AAEE-4E59-9DC9-2B57E223460A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BA8CADC-AAEE-4E59-9DC9-2B57E223460A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BA8CADC-AAEE-4E59-9DC9-2B57E223460A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BA8CADC-AAEE-4E59-9DC9-2B57E223460A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
