@@ -15,7 +15,7 @@ namespace UcenjeCS
         {
 
             //deklaracija varijable
-            int i;
+            int i;6
 
             // dodjeljivanje vrijednosti i koristenje varijable - operator dodjeljivanja =
             i = 7;
@@ -85,7 +85,7 @@ namespace UcenjeCS
             // int/int daje int
             // mora se raditi cast
 
-            Console.WriteLine(x/(float)y); //(float) cast u tip podatka float
+            Console.WriteLine(x / (float)y); //(float) cast u tip podatka float
 
 
 
