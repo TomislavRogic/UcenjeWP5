@@ -2,7 +2,10 @@
 
 using UcenjeCS;
 
-E01UlazIzlaz.Izvedi();
+
+E02VarijableTipoviPodataka.Izvedi();
+
+//E01UlazIzlaz.Izvedi();
 
 
 // See https://aka.ms/new-console-template for more information
