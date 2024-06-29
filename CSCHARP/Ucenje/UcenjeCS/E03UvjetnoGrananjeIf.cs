@@ -88,19 +88,41 @@ namespace UcenjeCS
             // | provjerava oba uvjeta
             // || ukoliko je prvi uvjet zadovoljen, ne gleda se drugi
 
-            if (1>1 || i == 0)
+            if (x>1 || y == 0)
             {
                 Console.WriteLine("ako je prvi uvjet zadovoljen ulazi se u if");
+            }
+
+            // if se moze gnijezditi
+            if (x == 3)
+            {
+                int k = 9; // ako varijabla ce biti deklarirana samo ako je x 3
+                if (i>0)
+                {
+                    Console.WriteLine("Zadovoljeno");
+                }
+                
             }
 
 
 
 
+            // inline if- tercijarni operator?:
+            x = 0;
+            if (x == 0)
+            {
+                Console.WriteLine("OK");
+            }
+            else
+            {
+                Console.WriteLine("NE");
+            }
+
+            // preduvjet je da if i else provode istu akciju -  u ovom slucaju ce
+
+            Console.WriteLine(x==0 ? "OK" : "NE");
 
 
-
-
-                
 
 
 
