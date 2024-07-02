@@ -2,8 +2,8 @@
 
 using UcenjeCS;
 
-
-E04Z1.Izvedi();
+Vjezbanje.Izvedi();
+// E04Z1.Izvedi();
 
 //E04UvjetnoGrananjeSwitch.Izvedi();
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Channels;
 using System.Threading.Tasks;
 
 namespace UcenjeCS
@@ -11,6 +12,9 @@ namespace UcenjeCS
         public static void Izvedi()
 
         {
+            Console.Write("Unesi moje prezime: ");
+            string prezime = Console.ReadLine();
+
             //Console.WriteLine: Ispisuje tekst i prelazi u novi red.
             // Console.Write: Ispisuje tekst, ali ostaje u istom redu.
             Console.WriteLine("Hello");
@@ -48,6 +52,7 @@ namespace UcenjeCS
            //vrijednošću varijable ime.
 
                         Console.WriteLine("Unijeli ste {0}", ime);
+            Console.WriteLine("Unijeli ste {0}", prezime);
 
             // ovo gore je bilo za unos stringa znaci sve pod navodnicima
 
@@ -59,16 +64,14 @@ namespace UcenjeCS
             Console.WriteLine("Molim unesite grad: ");
             string grad = Console.ReadLine();
 
-            Console.Write(adresa);
+            Console.Write(adresa + " ");
             Console.Write(grad);
 
 
-
-
-
-        }
+            }
 
         
+
 
 
     }

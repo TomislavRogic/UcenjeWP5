@@ -121,7 +121,7 @@ namespace UcenjeCS
             i = 1;
             Console.WriteLine(i++); //1 Ispisuje 1, zatim povećava i na 2
             Console.WriteLine(i); // 2 jer ju je gornja linija uvecala za 1
-            Console.WriteLine(++i); // prvo se uveca pa se ispise i dobijemo 3
+            Console.WriteLine(++i); // prvo se uveca za 1 pa se ispise i dobijemo 3
             Console.WriteLine(i); // 3, ispisuje 3 jer nismo uvecavali
 
 
