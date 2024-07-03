@@ -43,6 +43,8 @@ namespace UcenjeCS
             Console.WriteLine(i++); //1 Ispisuje 1, zatim povećava i na 2
             Console.WriteLine(i); // sada je 1 odozgo povecan na 2 i ispisuje 2
 
+            int j =5, k = 2;
+
 
 
 
