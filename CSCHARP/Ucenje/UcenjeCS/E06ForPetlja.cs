@@ -94,7 +94,7 @@ namespace UcenjeCS
             Console.WriteLine("*********************************");
             // niz
             int[] niz = { 2, 3, 2, 3, 4, 5, 4, 3 };
-            // ispisati sve aprne vrijednosti niza
+            // ispisati sve parne vrijednosti niza
             for(int i=0; i< niz.Length; i++)
             {
                 if (niz[i] %2 == 2)
