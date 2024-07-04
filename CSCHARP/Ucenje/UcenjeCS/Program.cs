@@ -3,8 +3,8 @@
 using UcenjeCS;
 
 
-//E06Z1.Izvedi();
-E06ForPetlja.Izvedi();
+E06Z1.Izvedi();
+//E06ForPetlja.Izvedi();
 //E05Nizovi.Izvedi();
 //Vjezbanje.Izvedi();
 //E04Z1.Izvedi();
