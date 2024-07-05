@@ -152,44 +152,71 @@ namespace UcenjeCS
                 Console.WriteLine();
             }*/
             Console.WriteLine("***********************");
+            //zadajemo Korisniku da unese broj redova i kolona i pretvaramo ih u 
+            Console.WriteLine("Molim unesite broj redova u tablici: ");
+            int brojredova = int.Parse(Console.ReadLine()); // Konverzija string unosa u integer
+            Console.WriteLine("Molim unesite broj kolona u tablici: ");
+            int brojkolona = int.Parse(Console.ReadLine());  // Konverzija string unosa u integer
 
+            int[,] ciklickatablica = new int[brojredova, brojkolona]; // Kreiranje dvodimenzionalne tablice
+            int broj = 1; // Broj kojim se popunjava tablica, počinje od 1
 
-            Console.WriteLine("Unesite broj redova: ");
-            int brojredova= int.Parse(Console.ReadLine());
-            Console.WriteLine("Unesite broj kolona: ");
-            int brojkolona=int.Parse(Console.ReadLine());
-            int e = 0;
-            int f = 0;
-            int pocetnibroj = 1;
-            int[,] ciklickatablica=new int[brojredova, brojkolona];
-            int gornjaGranica = 0;
-            int donjaGranica = brojredova - 1;
-            int lijevaGranica = 0;
-            int desnaGranica = brojkolona - 1;
-            for (int i = gornjaGranica; i <= donjaGranica; i++)
-            {
-                ciklickatablica[i, desnaGranica] = pocetnibroj++;
-            }
-            desnaGranica--;
+            int gore = 0;
+            int dole = brojredova - 1;
+            int lijevo = 0;
+            int desno = brojkolona - 1;
 
-            if (gornjaGranica <= donjaGranica)
+            // Popunjavanje tablice po spiralnom uzorku
+            while (gore <= dole && lijevo <= desno)
             {
                 // Popunjavanje donjeg reda s desna na lijevo
-                for (int j = desnaGranica; j >= lijevaGranica; j--)
+                for (int j = desno; j >= lijevo; j--)
                 {
-                    ciklickatablica[donjaGranica, j] = pocetnibroj++;
+                    if (broj<=brojredova * brojkolona)
+                    ciklickatablica[dole, j] = broj++ ;
                 }
-                donjaGranica--;
+                dole--;
+
+                // Popunjavanje lijevog stupca odozdo prema gore
+                for (int i = dole; i >= gore; i--)
+                {
+                    if (broj <= brojredova * brojkolona)
+                    ciklickatablica[i, lijevo] = broj++ ;
+                }
+                lijevo++;
+
+                // Popunjavanje gornjeg reda s lijeva na desno
+                for (int j = lijevo; j <= desno; j++)
+                {
+                    if (broj <= brojredova * brojkolona)
+                    ciklickatablica[gore, j] = broj++ ;
+                }
+                gore++;
+
+                // Popunjavanje desnog stupca odozgo prema dolje
+                for (int i = gore; i <= dole; i++)
+                {
+                    if(broj<=brojredova*brojkolona)
+                    ciklickatablica[i, desno] = broj++ ;
+                }
+                desno--;
             }
+
+            // Ispis tablice
             for (int i = 0; i < brojredova; i++)
             {
                 for (int j = 0; j < brojkolona; j++)
                 {
-                    Console.Write(String.Format("{0,3}", ciklickatablica[i, j] ) + " ");
+                    Console.Write(String.Format("{0,3}", ciklickatablica[i, j]) + " ");
                 }
                 Console.WriteLine();
-
             }
+
+
+
+
+
+
         }
 
     }
@@ -197,5 +224,5 @@ namespace UcenjeCS
 }
 
 
-    
+
 
