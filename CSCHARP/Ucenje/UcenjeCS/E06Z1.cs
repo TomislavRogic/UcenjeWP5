@@ -169,7 +169,7 @@ namespace UcenjeCS
             // Popunjavanje tablice po spiralnom uzorku
             while (gore <= dole && lijevo <= desno)
             {
-                // Popunjavanje donjeg reda s desna na lijevo
+                // Popunjavanje donjeg reda s desna na lijevo/*/**/*/
                 for (int j = desno; j >= lijevo; j--)
                 {
                     if (broj<=brojredova * brojkolona)
