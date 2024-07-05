@@ -1,8 +1,14 @@
 ﻿
 
 using UcenjeCS;
+//E07Z1.Izvedi();
 
 
+//E10TryCatch.Izvedi();
+
+//E09ForeachPetlja.Izvedi();
+//8DoWhilePetlja.Izvedi();
+//E07WhilePetlja.Izvedi();
 E06Z1.Izvedi();
 //E06ForPetlja.Izvedi();
 //E05Nizovi.Izvedi();

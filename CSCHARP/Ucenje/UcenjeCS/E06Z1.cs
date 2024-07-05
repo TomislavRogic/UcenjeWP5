@@ -11,7 +11,7 @@ namespace UcenjeCS
     {
         public static void Izvedi()
         {
-            int broj = 25; // Varijabla za praćenje trenutnog broja
+            /*int broj = 25; // Varijabla za praćenje trenutnog broja
             for (int i = 0; i < 5; i++) // Vanjska petlja za redove
             {
                 for (int j = 0; j < 5; j++) // Unutarnja petlja za stupce
@@ -150,10 +150,48 @@ namespace UcenjeCS
                     Console.Write(String.Format("{0,3}", tablica3[i, j]) + " ");
                 }
                 Console.WriteLine();
-            }
+            }*/
+            Console.WriteLine("***********************");
 
+
+            Console.WriteLine("Unesite broj redova: ");
+            int brojredova= int.Parse(Console.ReadLine());
+            Console.WriteLine("Unesite broj kolona: ");
+            int brojkolona=int.Parse(Console.ReadLine());
+            int e = 0;
+            int f = 0;
+            int pocetnibroj = 1;
+            int[,] ciklickatablica=new int[brojredova, brojkolona];
+            int gornjaGranica = 0;
+            int donjaGranica = brojredova - 1;
+            int lijevaGranica = 0;
+            int desnaGranica = brojkolona - 1;
+            for (int i = gornjaGranica; i <= donjaGranica; i++)
+            {
+                ciklickatablica[i, desnaGranica] = pocetnibroj++;
+            }
+            desnaGranica--;
+
+            if (gornjaGranica <= donjaGranica)
+            {
+                // Popunjavanje donjeg reda s desna na lijevo
+                for (int j = desnaGranica; j >= lijevaGranica; j--)
+                {
+                    ciklickatablica[donjaGranica, j] = pocetnibroj++;
+                }
+                donjaGranica--;
+            }
+            for (int i = 0; i < brojredova; i++)
+            {
+                for (int j = 0; j < brojkolona; j++)
+                {
+                    Console.Write(String.Format("{0,3}", ciklickatablica[i, j] ) + " ");
+                }
+                Console.WriteLine();
+
+            }
         }
-        
+
     }
 
 }
