@@ -44,18 +44,46 @@ namespace UcenjeCS
             string ime;
             do
             {
-                Console.Write("Koje je tvoje ime: ");
+                Console.Write("Koje je Vase ime?: ");
                 ime = Console.ReadLine();
                 if (ime.Trim().Length == 0)
                 {
                     Console.WriteLine("Niste unijeli ime");
+                    continue;
                 }
                 break;
 
             }while (true);
 
             Console.WriteLine("Vase ime je >{0}<", ime);
+            Console.WriteLine("Hvala na unosu i zelimo Vam ugodan dan! ");
 
+            Console.WriteLine("************************************************************");
+            // isti ovaj primjer ali s while petljom
+            string imekorisnika= "";
+            string prezimekorisnika = "";
+            
+
+            while (true)
+            {
+                Console.WriteLine("Molim Vas, recite mi kako se zovete?");
+                imekorisnika = Console.ReadLine();
+                if (imekorisnika.Trim().Length == 0) 
+                {
+                    Console.WriteLine("Niste unijeli ime, molim Vas unesite ime");
+                    continue;
+                }
+
+                Console.WriteLine("Molim Vas, recite mi kako se prezivate?");
+                prezimekorisnika = Console.ReadLine();
+                if (prezimekorisnika.Trim().Length == 0)
+                {
+                    Console.WriteLine("Niste unijeli prezime, molim Vas unesite prezime");
+                    continue;  
+                }
+                break;
+            }
+            Console.WriteLine("Hvala Vam sto Vas imamo priliku upoznati, {0} {1}", prezimekorisnika, imekorisnika);
 
 
 
