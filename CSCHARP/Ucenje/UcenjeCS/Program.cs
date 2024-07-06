@@ -1,10 +1,21 @@
 ﻿
 
 using UcenjeCS;
+E01Z4.Izvedi();
+
+//E06Z2.Izvedi();
+//E0501.Izvedi();
+
+
+//E07Z2.Izvedi();
+//E03Z4.Izvedi();
+
+//E01Z3.Izvedi();
+//E01Z2.Izvedi();
 //E07Z1.Izvedi();
 
-
-E10TryCatch.Izvedi();
+//E01Z1.Izvedi();
+//E10TryCatch.Izvedi();
 
 //E09ForeachPetlja.Izvedi();
 //8DoWhilePetlja.Izvedi();
