@@ -1,7 +1,10 @@
 ﻿
 
 using UcenjeCS;
-E01Z4.Izvedi();
+
+
+E06Z1CiklickatablicaClockwise.Izvedi();
+//E01Z4.Izvedi();
 
 //E06Z2.Izvedi();
 //E0501.Izvedi();
