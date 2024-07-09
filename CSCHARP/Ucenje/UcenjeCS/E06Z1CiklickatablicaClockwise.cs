@@ -8,6 +8,7 @@ namespace UcenjeCS
 {
     internal class E06Z1CiklickatablicaClockwise
     {
+        // ciklicka tablica clockwise - prva pozicija dole desno
         public static void Izvedi()
         {
             Console.WriteLine("Molim unesite broj redova u tablici: ");
