@@ -69,7 +69,7 @@ namespace UcenjeCS
 
             
             
-            int broj1 = 1;
+            
             int brojredova1 =0 ;
             int brojkolona1 = 0;
            
@@ -102,7 +102,7 @@ namespace UcenjeCS
             }
 
             int[,] ciklickatablica1 = new int[brojredova1, brojkolona1];
-
+            int broj1 = 1;
             int gore1 = 0;
             int dole1 = brojredova1 - 1;
             int lijevo1 = 0;
