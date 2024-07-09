@@ -2,8 +2,8 @@
 
 using UcenjeCS;
 
-E0901Vjezba.Izvedi();
-//E06Z1CiklickatablicaClockwise.Izvedi();
+//E0901Vjezba.Izvedi();
+E06Z1CiklickatablicaClockwise.Izvedi();
 //E01Z4.Izvedi();
 
 //E06Z2.Izvedi();
