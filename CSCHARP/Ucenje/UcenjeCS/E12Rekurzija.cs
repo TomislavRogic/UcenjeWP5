@@ -16,8 +16,14 @@ namespace UcenjeCS
 
             // Metoda(); ovo producija StackOverflow exeption
             Console.WriteLine(Zbroji(100));
-
+            int broj = Izracunaj("Koji je broj",2);
         }
+
+        private static int Izracunaj(string tekst, int broj)
+        {
+            return 0;
+        }
+
         private static void Metoda()
         {
             Metoda();
