@@ -1,7 +1,9 @@
 ﻿
 
 using UcenjeCS;
-E13Vjezbanje.Izvedi();
+
+E06Ciklickatablicadoljelijevousmjerukazaljke.Izvedi();
+//E13Vjezbanje.Izvedi();
 //E12Rekurzija.Izvedi();
 //E11Z1.Izvedi();
 //E11Metode.Izvedi();
