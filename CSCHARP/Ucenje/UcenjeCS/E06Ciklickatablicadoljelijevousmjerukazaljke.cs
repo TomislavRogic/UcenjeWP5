@@ -54,7 +54,53 @@ namespace UcenjeCS
                     Console.WriteLine("Neispravan unos. Molim unesite broj kolona izmedu 2 i 50.");
                 }
             }
+            int[,] ciklickatablica = new int[brojredova, brojkolona];
+            int broj = 2;
+            int gore = 0;
+            int dole = brojredova - 1;
+            int lijevo = 0;
+            int desno=brojkolona - 1;
+            while(gore<=dole && lijevo <= desno)
+            {// dole prema gore
+                for(int i = dole; i >= gore; i--)
+                {
+                    
+                    ciklickatablica[i, lijevo] = broj++;
+                }
+                lijevo++;
+                //lijevo prema desno
+                for(int j=lijevo; j<=desno; j++)
+                {
+                    
+                        ciklickatablica[gore,j] = broj++;
+                }
+                gore++;
 
+                // gore prema dole
+                for (int i=gore; i <= dole; i++)
+                {
+                    
+                        ciklickatablica[i, desno] = broj++;
+                }
+                desno--;
+
+                //desno prema lijevo
+                for(int j=desno; j>=lijevo; j--)
+                {
+                    
+                        ciklickatablica[dole, j] = broj++;
+                }
+                dole--;
+
+            }
+            for (int i = 0; i < brojredova; i++)
+            {
+                for (int j = 0; j < brojkolona; j++)
+                {
+                    Console.Write(String.Format("{0,3}", ciklickatablica[i, j]) + " ");
+                }
+                Console.WriteLine();
+            }
 
 
 
@@ -64,8 +110,8 @@ namespace UcenjeCS
 
 
         }
-                
-       
+
+
     }
            
     
