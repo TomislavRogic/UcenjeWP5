@@ -10,44 +10,45 @@ namespace UcenjeCS
     {
         public static void Izvedi()
         {
-            string ime1 = "Tomislav";
-            string ime2 = "Kristina";
+            // unos prvog imena
+            Console.WriteLine("Unesite svoje ime: ");
+            string vaseime= Console.ReadLine();
 
-            // Kombinovanje oba imena u jedan string
-            string kombiniranaImena = (ime1 + ime2).ToLower();
+            // unos drugog imena
+            Console.WriteLine("Unesite partnerovo ime: ");
+            string partnerovoime= Console.ReadLine();
 
-            // Inicijalizacija niza za brojanje pojavljivanja slova
-            int[] brojPonavljanja = new int[26]; // 26 slova u engleskom alfabetu
-
-            // Prolazak kroz svaki karakter u kombinovanom stringu
-            foreach (char c in kombiniranaImena)
+            // spajanje ta dva imena u jedno
+            string imepar= vaseime + "" + partnerovoime;
+            
+            // brojanje pojavljivanje slova-- provjerava u ascii i svaki put oduzima asci broj od 'a' i onda broju dodijeljuje vrijednost
+            int[] count= new int[26];
+            foreach (char slovo in imepar.ToLower())
             {
-                if (char.IsLetter(c))
+                if (char.IsLetter(slovo))
                 {
-                    brojPonavljanja[c - 'a']++;
+                    count[slovo - 'a']++;
                 }
             }
 
-            // Ispisivanje slova u prvom redu
-            foreach (char c in kombiniranaImena)
+            // ispis slova i koliko puta se pojavljuje
+            foreach (char slovo in imepar)
             {
-                if (char.IsLetter(c))
+                if (char.IsLetter(slovo))
                 {
-                    Console.Write($"{c} ");
+                    int index = slovo - 'a';
+                    Console.WriteLine($"{slovo}"); // ispisuje slovo
+                    Console.WriteLine($"{count[index]}");
                 }
-            }
-            Console.WriteLine();
 
-            // Ispisivanje broja ponavljanja ispod svakog slova
-            foreach (char c in kombiniranaImena)
-            {
-                if (char.IsLetter(c))
-                {
-                    Console.Write($"{brojPonavljanja[c - 'a']} ");
-                }
             }
-            Console.WriteLine();
+
+
+
+
+
+
         }
 
-        }
+    }
 }

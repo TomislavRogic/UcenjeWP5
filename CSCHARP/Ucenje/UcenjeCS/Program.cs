@@ -2,8 +2,8 @@
 
 using UcenjeCS;
 
-E0604Ciklickatablicagorelijevousmjerukayaljkenasatu.Izvedi();
-//E0603Ciklickatablicadoledesnousmjerukazaljkenasatu.Izvedi();
+//E0604Ciklickatablicagorelijevousmjerukayaljkenasatu.Izvedi();
+E0603Ciklickatablicadoledesnousmjerukazaljkenasatu.Izvedi();
 //E06Ciklickatablicadoljelijevousmjerukazaljke.Izvedi();
 //E13Vjezbanje.Izvedi();
 //E12Rekurzija.Izvedi();
