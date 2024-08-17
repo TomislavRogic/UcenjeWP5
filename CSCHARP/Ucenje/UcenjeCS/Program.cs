@@ -2,7 +2,10 @@
 
 using UcenjeCS;
 
-E0607Ciklickatablicadoledesnousmjerukontrakazaljkenasatu.Izvedi();
+
+
+E0608Ciklickatablicagorelijevousmjerukontrakazaljkenasatu.Izvedi();
+//E0607Ciklickatablicadoledesnousmjerukontrakazaljkenasatu.Izvedi();
 //E0606Ciklickatablicadolelijevousmjerukontrakazaljke.Izvedi();
 //E0605Ciklickatablicagoredesnousmjerukazaljkenasatu.Izvedi();
 //E1Zadatakinstrukcije.Izvedi();
