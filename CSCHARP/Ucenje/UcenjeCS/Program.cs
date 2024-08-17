@@ -2,8 +2,8 @@
 
 using UcenjeCS;
 
-
-E0606Ciklickatablicadolelijevousmjerukontrakazaljke.Izvedi();
+E0607Ciklickatablicadoledesnousmjerukontrakazaljkenasatu.Izvedi();
+//E0606Ciklickatablicadolelijevousmjerukontrakazaljke.Izvedi();
 //E0605Ciklickatablicagoredesnousmjerukazaljkenasatu.Izvedi();
 //E1Zadatakinstrukcije.Izvedi();
 //E0604Ciklickatablicagorelijevousmjerukayaljkenasatu.Izvedi();
