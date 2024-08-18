@@ -21,14 +21,14 @@ namespace UcenjeCS
                 {
                     try
                     {
-                        Console.WriteLine("Molim unesite broj redova u tablici izmedu 2 i 50: ");
-                        brojredova = int.Parse(Console.ReadLine());
                         if (brojredova >= 2 && brojredova <= 50)
                         {
                             break;
                         }
                         else
                         {
+                        Console.WriteLine("Molim unesite broj redova u tablici izmedu 2 i 50: ");
+                        brojredova = int.Parse(Console.ReadLine());
                             Console.WriteLine("Uneseni broj redova nije izmedu 2 i 50, molim Vas unesite ponovo");
                         }
                     }
