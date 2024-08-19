@@ -8,7 +8,7 @@ using UcenjeCS;
 //E0607Ciklickatablicadoledesnousmjerukontrakazaljkenasatu.Izvedi();
 //E0606Ciklickatablicadolelijevousmjerukontrakazaljke.Izvedi();
 //E0605Ciklickatablicagoredesnousmjerukazaljkenasatu.Izvedi();
-//E1Zadatakinstrukcije.Izvedi();
+E1Zadatakinstrukcije.Izvedi();
 //E0604Ciklickatablicagorelijevousmjerukayaljkenasatu.Izvedi();
 //E0603Ciklickatablicadoledesnousmjerukazaljkenasatu.Izvedi();
 //E06Ciklickatablicadoljelijevousmjerukazaljke.Izvedi();
@@ -17,7 +17,7 @@ using UcenjeCS;
 //E11Z1.Izvedi();
 //E11Metode.Izvedi();
 //E11Metode.Tip1(); // ne vidimo ovu metodu jer je private
-Z1LjubavniTrokut.Izvedi();
+//Z1LjubavniTrokut.Izvedi();
 //E0901Vjezba.Izvedi();
 //E06Z1CiklickatablicaClockwise.Izvedi();
 //E01Z4.Izvedi();
