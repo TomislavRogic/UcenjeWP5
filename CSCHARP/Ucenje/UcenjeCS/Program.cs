@@ -2,13 +2,13 @@
 
 using UcenjeCS;
 
-
+E0609Ciklickatablicagoredesnousmjerukontrakazaljkenasatu.Izvedi();
 //Z101Ljubavnikalkulatorvjezba.Izvedi();
 //E0608Ciklickatablicagorelijevousmjerukontrakazaljkenasatu.Izvedi();
 //E0607Ciklickatablicadoledesnousmjerukontrakazaljkenasatu.Izvedi();
 //E0606Ciklickatablicadolelijevousmjerukontrakazaljke.Izvedi();
 //E0605Ciklickatablicagoredesnousmjerukazaljkenasatu.Izvedi();
-E1Zadatakinstrukcije.Izvedi();
+//E1Zadatakinstrukcije.Izvedi();
 //E0604Ciklickatablicagorelijevousmjerukayaljkenasatu.Izvedi();
 //E0603Ciklickatablicadoledesnousmjerukazaljkenasatu.Izvedi();
 //E06Ciklickatablicadoljelijevousmjerukazaljke.Izvedi();

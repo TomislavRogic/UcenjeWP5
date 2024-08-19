@@ -18,7 +18,9 @@ namespace UcenjeCS
                 int brojkolona = 0;
 
                 while (true)
-                {
+                { 
+                    Console.WriteLine("Molim unesite broj redova u tablici izmedu 2 i 50: ");
+                        brojredova = int.Parse(Console.ReadLine());
                     try
                     {
                         if (brojredova >= 2 && brojredova <= 50)
@@ -27,8 +29,7 @@ namespace UcenjeCS
                         }
                         else
                         {
-                        Console.WriteLine("Molim unesite broj redova u tablici izmedu 2 i 50: ");
-                        brojredova = int.Parse(Console.ReadLine());
+                       
                             Console.WriteLine("Uneseni broj redova nije izmedu 2 i 50, molim Vas unesite ponovo");
                         }
                     }
