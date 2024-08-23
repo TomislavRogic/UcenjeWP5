@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 
 namespace UcenjeCS.E16NasljedivanjePolimorfizam
 {
-    internal class Entitet : Object // ovo se podrazumijeva i ne mora se pisati (Object)
+    // apstraktna klasa je ona klasa koja se ne može instancirati
+    // ona se kreira da bi ju je druge klase nasljedile i dopunile
+    internal abstract class Entitet : Object // ovo se podrazumijeva i ne mora se pisati (Object)- ovdje imamo konstruktor ali je prazan
     {
 
         public int? Sifra { get; set; }
         public override string ToString()
         {
-            return base.ToString();
+            return Sifra.ToString();
         }
 
     }
