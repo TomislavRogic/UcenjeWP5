@@ -5,6 +5,7 @@ using UcenjeCS;
 new UcenjeCS.E16NasljedivanjePolimorfizam.Program();
 //UcenjeCS.E15KlasaObjekt.Program.Izvedi();   
 //E0609Ciklickatablicagoredesnousmjerukontrakazaljkenasatu.Izvedi();
+//Z102Ljubavnikalkulator.Izvedi();
 //Z101Ljubavnikalkulatorvjezba.Izvedi();
 //E0608Ciklickatablicagorelijevousmjerukontrakazaljkenasatu.Izvedi();
 //E0607Ciklickatablicadoledesnousmjerukontrakazaljkenasatu.Izvedi();

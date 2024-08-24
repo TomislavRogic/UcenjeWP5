@@ -13,6 +13,8 @@ namespace UcenjeCS.E16NasljedivanjePolimorfizam
         // konstruktor- posebna vrsta metode koja se izvrsava kada se kreira objekt- prilikom kreiranja instance klase-objekta
         // kljucna rijec new
         // konstruktor se naziva kao i klasa
+        // konstruktori sluze tome da se formalno izvedu u trenutku kreiranja nove instance
+
         public Program() // metoda KONSTRUKTOR
         {
             Console.WriteLine("Hello from construktor");
@@ -57,7 +59,7 @@ namespace UcenjeCS.E16NasljedivanjePolimorfizam
             // kada radimo s stringbilderom, onda se ne stvara nova instanca, nego se samo mijenja vrijednost, + radi svaki puta novu varijablu , a append ne radi novu varijablu, nego samo mijenja vrijednost
             // radimo li s stringom, svaki put kada se mijenja vrijednost, stvara se nova instanca
             // koristimo samo jednu memorijsku lokaciju kojoj onda ne mijenjamo vrijednost, nego samo dodajemo vrijednost
-
+             // 
 
             // metoda ToString
             // metoda ToString je metoda koja se nalazi na klasi Object
@@ -74,16 +76,37 @@ namespace UcenjeCS.E16NasljedivanjePolimorfizam
             var g= new Grupa() { Sifra=1,DatumPocetka=DateTime.Now};
             Console.WriteLine(g);
 
-            var polaznik=new Polaznik();
+            var polaznik=new Polaznik();// ovo je instanca klase Polaznik, objekt je instanca klase, polaznik je objekt, da li je ovo konstruktor? ne, ovo je instanca klase
             polaznik.Sifra = 1;
             polaznik.Ime = "Pero";
 
-            var predavac = new Predavac() { Sifra = 1, Ime = "Marko" };
+            var predavac = new Predavac() { Sifra = 1, Ime = "Marko" };// ovo je instanca klase Predavac, objekt je instanca klase, predavac je objekt, da li je ovo konstruktor? ne, ovo je instanca klase
+            // Predavac je klasa, a predavac je objekt, instanca klase je objekt
+            // polaznik i predavac su objekti, a Polaznik i Predavac su klase
+            // konstruktori su metode koje se izvrsavaju prilikom kreiranja objekta i sluze tome da se formalno izvedu u trenutku kreiranja nove instance
+            predavac= new Predavac(2,"Ana","Mak","HR24242424");
             Console.WriteLine("{0} - {1}", polaznik,predavac);
 
-            //var e = new Entitet(); - apstrakna greska u programu, klasa se ne moze instancirati
+            //var e = new Entitet(); - apstrakna greska u programu, klasa se ne moze instancirati, ali ju mozes naslijediti. ovo je sintaksna greska jer smo rekli da je klasa Entitet apstraktna
+
+            var obradi= new Obrada[2];
+            obradi[0]=new ObradaIzlaznihRacuna();
+            obradi[1]=new ObradaUlaznihRacuna();
+
+            // polimorfizam- mogucnost da se objekt ponasa kao objekt druge klase
+
+            foreach (var o in obradi)
+            {
+                o.Procesuiraj();
+            }
+
+
 
         }
+
+
+
+
 
         // overloads konstruktora
 
@@ -97,7 +120,8 @@ namespace UcenjeCS.E16NasljedivanjePolimorfizam
         }
         
 
-        // nasljedivanje- razlicite klase imaju zajednicke osobine
+        // nasljedivanje ili Polimorfizam- razlicite klase imaju zajednicke osobine
+        // Polimorfizam- mogucnost da se objekt ponasa kao objekt druge klase
 
 
 
