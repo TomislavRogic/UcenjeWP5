@@ -10,6 +10,7 @@ namespace UcenjeCS
     {
         public static void Izvedi()
         {
+            // Zadatak 1 Ucitavamo broj s  konzole i ispisujemo je li jednoznamenkasti ili dvoznamenkasti broj. ako je broj 42 ispisujemo da je poseban broj
             try
             {
 
