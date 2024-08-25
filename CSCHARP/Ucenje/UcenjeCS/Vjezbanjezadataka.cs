@@ -39,7 +39,47 @@ namespace UcenjeCS
             }
 
            
+            // Zadatak 2 Ucitavamo 3 broja s konzole i ispisujemo njihov prosjek    Dodatno, ispisujemo koja ocjena ce biti zakljucena uceniku
+            try
+            {
+                // unos tri ocjene
+                Console.WriteLine("Molim unesi prvi broj: ");
+                int prvi = int.Parse(Console.ReadLine());
+                Console.WriteLine("Molim unesi drugi broj: ");
+                int drugi = int.Parse(Console.ReadLine());
+                Console.WriteLine("Molim unesi treci broj: ");
+                int treci = int.Parse(Console.ReadLine());
 
+                // racunanje prosjeka
+                double prosjek = (prvi + drugi + treci) / 3.0;
+                Console.WriteLine("Prosjek unesenih brojeva je: " + prosjek);
+
+                // izracunavanje zakljucene ocjene
+                if (prosjek >= 4.5)
+                {
+                    Console.WriteLine("Ocjena je 5");
+                }
+                else if (prosjek >= 3.5)
+                {
+                    Console.WriteLine("Ocjena je 4");
+                }
+                else if (prosjek >= 2.5)
+                {
+                    Console.WriteLine("Ocjena je 3");
+                }
+                else if (prosjek >= 1.5)
+                {
+                    Console.WriteLine("Ocjena je 2");
+                }
+                else
+                {
+                    Console.WriteLine("Ocjena je 1");
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Neispravan unos. Molim unesite tri broja.");
+            }
         }
     }
 }
