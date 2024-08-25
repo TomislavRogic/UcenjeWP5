@@ -2,8 +2,8 @@
 
 using UcenjeCS;
 
-
-Vjezbanjezadataka.Izvedi();
+Ljubavnikalkulatorrjesenjeprekoniza.Izvedi();
+//Vjezbanjezadataka.Izvedi();
 //new UcenjeCS.E16NasljedivanjePolimorfizam.Program();
 //UcenjeCS.E15KlasaObjekt.Program.Izvedi();   
 //E0609Ciklickatablicagoredesnousmjerukontrakazaljkenasatu.Izvedi();
