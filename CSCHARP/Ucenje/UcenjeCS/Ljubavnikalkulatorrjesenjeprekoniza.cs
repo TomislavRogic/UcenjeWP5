@@ -18,7 +18,6 @@ namespace UcenjeCS
 
             string zajedno = (mojeime + partner).ToUpper();
             int[] brojSlova = new int[zajedno.Length];
-            int k = 0;
 
             // sada radimo novi string ime zajedno velikim slovima
             foreach (char slovo in zajedno)
@@ -27,17 +26,10 @@ namespace UcenjeCS
             }
             Console.WriteLine(); // dodajemo novi red nakon ispisa slova
 
+            // Koristimo rekurziju za brojanje pojavljivanja slova
             for (int i = 0; i < zajedno.Length; i++)
             {
-                for (int j = 0; j < zajedno.Length; j++)
-                {
-                    if (zajedno[i] == zajedno[j]) // u ovoj for petlji k vrijednosti su jednake broju ponavljanja svakog slova u ime
-                    {
-                        k++;// k je broj ponavljanja svakog slova
-                    }
-                }
-                brojSlova[i] = k;
-                k = 0; // k se resetira nakon svakog vanjskog loopa
+                brojSlova[i] = BrojPojavljivanja(zajedno, zajedno[i], 0);
             }
 
             // ispisujemo broj ponavljanja svakog slova
@@ -46,13 +38,27 @@ namespace UcenjeCS
                 Console.Write(broj + " ");
             }
             Console.WriteLine();
+        }
 
+        // Rekurzivna funkcija za brojanje pojavljivanja slova
+        private static int BrojPojavljivanja(string zajedno, char slovo, int index)
+        {
+            if (index >= zajedno.Length)
+            {
+                return 0;
+            }
 
-
-
+            int count = zajedno[index] == slovo ? 1 : 0;
+            return count + BrojPojavljivanja(zajedno, slovo, index + 1);
         }
     }
+
+
+
+
 }
+    
+
 
     
 
