@@ -22,7 +22,7 @@ namespace UcenjeCS
                 }
                 else if (unesenibroj >= 10 && unesenibroj <= 99)
                 {
-                    Console.WriteLine("Uneseni broj je jednoznamenkasti broj");
+                    Console.WriteLine("Uneseni broj je dvoznamenkasti broj");
                 }
                 else if (unesenibroj==42)
                 {
@@ -80,6 +80,22 @@ namespace UcenjeCS
             {
                 Console.WriteLine("Neispravan unos. Molim unesite tri broja.");
             }
+
+            // Zadatak 3.Ucitaj s konzole dva decimalna broja. Izracunaj njihov zbroj a da su cijeli brojevi
+
+            Console.WriteLine("Molim Vas unesite prvi decimalni broj: ");
+            double prvibroj=double.Parse(Console.ReadLine());
+
+            Console.WriteLine("Molim Vas unesite drugi decimalni broj: ");
+            double drugibroj = double.Parse(Console.ReadLine());
+        
+            int broj1= (int)prvibroj;
+            int broj2 = (int)drugibroj;
+
+            int suma= broj1 + broj2;
+            Console.WriteLine("Zbroj unesenih brojeva je: " + suma);
+        
         }
+
     }
 }
