@@ -108,12 +108,14 @@ namespace UcenjeCS
 
             int[] brojevi = new int[brojUnesenihBrojeva];
 
-            for(int i=0; i <brojUnesenihBrojeva;i++) // 0, 1, 2, 3
+            for (int i = 0; i < brojUnesenihBrojeva; i++) // 0, 1, 2, 3
             {
-              brojevi[i] = int.Parse(Console.ReadLine());
+                brojevi[i] = int.Parse(Console.ReadLine());
                 suma = suma + brojevi[i];
             }
             Console.WriteLine("Suma brojeva je " + suma);
+
+            Console.WriteLine("**********************************");
 
             for (int i = 0; i < brojUnesenihBrojeva; i++) // 0, 1, 2, 3
             {
@@ -121,7 +123,18 @@ namespace UcenjeCS
 
             }
 
-        }
+            Console.WriteLine("************************************");
+            float prosjek = (float)suma / brojUnesenihBrojeva;
+            Console.WriteLine("Prosjek brojeva koje ste unijeli je: " + prosjek);
 
+            Console.WriteLine("*************************************");
+
+            // zaokruzivanje broja 
+            float zaokruzeniBroj = float.Round(prosjek);
+
+            Console.WriteLine("Prosjek je zaokruzen na cijeli brij:" + zaokruzeniBroj);
+
+
+        }
     }
 }
