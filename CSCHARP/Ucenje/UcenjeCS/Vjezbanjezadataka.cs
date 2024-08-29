@@ -132,7 +132,7 @@ namespace UcenjeCS
             // zaokruzivanje broja 
             float zaokruzeniBroj = float.Round(prosjek);
 
-            Console.WriteLine("Prosjek je zaokruzen na cijeli brij:" + zaokruzeniBroj);
+            Console.WriteLine("Prosjek je zaokruzen na cijeli broj:" + zaokruzeniBroj);
 
 
         }
