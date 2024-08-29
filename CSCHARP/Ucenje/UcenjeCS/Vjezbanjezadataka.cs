@@ -10,7 +10,7 @@ namespace UcenjeCS
     {
         public static void Izvedi()
         {
-            // Zadatak 1 Ucitavamo broj s  konzole i ispisujemo je li jednoznamenkasti ili dvoznamenkasti broj. ako je broj 42 ispisujemo da je poseban broj
+            /*Zadatak 1 Ucitavamo broj s  konzole i ispisujemo je li jednoznamenkasti ili dvoznamenkasti broj. ako je broj 42 ispisujemo da je poseban broj
             try
             {
 
@@ -24,13 +24,14 @@ namespace UcenjeCS
                 {
                     Console.WriteLine("Uneseni broj je dvoznamenkasti broj");
                 }
-                else if (unesenibroj==42)
-                {
-                    Console.WriteLine("Unijeli ste poseban broj");
-                }
                 else
                 {
                     Console.WriteLine("Uneseni broj nije jednoznamenkasti ili dvoznamenkasti broj");
+                }
+
+                if (unesenibroj == 42)
+                {
+                    Console.WriteLine("Unijeli ste poseban broj");
                 }
             }
             catch
@@ -55,6 +56,9 @@ namespace UcenjeCS
                 Console.WriteLine("Prosjek unesenih brojeva je: " + prosjek);
 
                 // izracunavanje zakljucene ocjene
+                //double f = double.Round(prosjek);
+                //Console.WriteLine(  "Zaokruzena ocjena je " + f);
+
                 if (prosjek >= 4.5)
                 {
                     Console.WriteLine("Ocjena je 5");
@@ -94,7 +98,29 @@ namespace UcenjeCS
 
             int suma= broj1 + broj2;
             Console.WriteLine("Zbroj unesenih brojeva je: " + suma);
-        
+
+            */
+
+            // korisnik unosi koliko ce brojeva upisati. ucitaj te brojeve, izracunaj njihov prosjek i ispisi sve brojeve koji su veci od prosjeka
+            Console.WriteLine("Molim Vas unesite koliko brojeva zelite unijeti:");
+            int brojUnesenihBrojeva = int.Parse(Console.ReadLine());
+            int suma = 0;
+
+            int[] brojevi = new int[brojUnesenihBrojeva];
+
+            for(int i=0; i <brojUnesenihBrojeva;i++) // 0, 1, 2, 3
+            {
+              brojevi[i] = int.Parse(Console.ReadLine());
+                suma = suma + brojevi[i];
+            }
+            Console.WriteLine("Suma brojeva je " + suma);
+
+            for (int i = 0; i < brojUnesenihBrojeva; i++) // 0, 1, 2, 3
+            {
+                Console.WriteLine(brojevi[i]);
+
+            }
+
         }
 
     }
