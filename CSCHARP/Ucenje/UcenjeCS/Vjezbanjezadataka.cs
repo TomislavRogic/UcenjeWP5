@@ -102,37 +102,80 @@ namespace UcenjeCS
             */
 
             // korisnik unosi koliko ce brojeva upisati. ucitaj te brojeve, izracunaj njihov prosjek i ispisi sve brojeve koji su veci od prosjeka
-            Console.WriteLine("Molim Vas unesite koliko brojeva zelite unijeti:");
-            int brojUnesenihBrojeva = int.Parse(Console.ReadLine());
-            int suma = 0;
+            /* Console.WriteLine("Molim Vas unesite koliko brojeva zelite unijeti:");
+             int brojUnesenihBrojeva = int.Parse(Console.ReadLine());
+             int suma = 0;
 
-            int[] brojevi = new int[brojUnesenihBrojeva];
+             int[] brojevi = new int[brojUnesenihBrojeva];
 
-            for (int i = 0; i < brojUnesenihBrojeva; i++) // 0, 1, 2, 3
+             for (int i = 0; i < brojUnesenihBrojeva; i++) // 0, 1, 2, 3
+             {
+                 brojevi[i] = int.Parse(Console.ReadLine());
+                 suma = suma + brojevi[i];
+             }
+             Console.WriteLine("Suma brojeva je " + suma);
+
+             Console.WriteLine("**********************************");
+
+             //for (int i = 0; i < brojUnesenihBrojeva; i++) // 0, 1, 2, 3
+             //{
+             //    Console.WriteLine(brojevi[i]);
+
+             //}
+
+             //Console.WriteLine("************************************");
+             //float prosjek = (float)suma / brojUnesenihBrojeva;
+             //Console.WriteLine("Prosjek brojeva koje ste unijeli je: " + prosjek);
+
+             //Console.WriteLine("*************************************");
+
+             //// zaokruzivanje broja 
+             //float zaokruzeniBroj = float.Round(prosjek);
+
+             //Console.WriteLine("Prosjek je zaokruzen na cijeli broj:" + zaokruzeniBroj);
+
+             //for(int i=0; i < brojevi.Length; i++) // 0, 1, 2
+             //{
+             //    if (brojevi[i] > prosjek)
+             //    {
+             //        Console.WriteLine("Broj " + brojevi[i] + " na indeksu " + i);
+             //    }
+             //}*/
+
+            // u polje velicine 3 spremi dva ucitana broja, a na trece mjesto u polju stavi zbroj ta dva broja i ispisi ga
+            //int[] niz = new int[3];
+
+            //Console.WriteLine("Molim unesite 2 broja: ");
+            //niz[0]  = int.Parse(Console.ReadLine());
+            //niz[1] = int.Parse(Console.ReadLine());
+
+            //niz[2] = niz[0] + niz[1];
+            //Console.WriteLine(niz[2]);
+
+            // u polje velicine 100 spremiti brojeve 10, 11, 12, .... i ispisati sve brojeve
+            int[] NoviNiz = new int[100];
+
+            // nacin 1
+            /* int PocetniBroj = 10;
+            for (int i= 10; i<100;  i++)
             {
-                brojevi[i] = int.Parse(Console.ReadLine());
-                suma = suma + brojevi[i];
-            }
-            Console.WriteLine("Suma brojeva je " + suma);
+                NoviNiz[i]= i;
+                Console.WriteLineNoviNiz[i]);
+            } */
 
-            Console.WriteLine("**********************************");
 
-            for (int i = 0; i < brojUnesenihBrojeva; i++) // 0, 1, 2, 3
+            // nacin 2
+            // spremanje brojeva
+            int RedniBroj = 1;
+            for (int i = 0; i < NoviNiz.Length; i++)
             {
-                Console.WriteLine(brojevi[i]);
-
+                NoviNiz[i] = i + 10;
             }
-
-            Console.WriteLine("************************************");
-            float prosjek = (float)suma / brojUnesenihBrojeva;
-            Console.WriteLine("Prosjek brojeva koje ste unijeli je: " + prosjek);
-
-            Console.WriteLine("*************************************");
-
-            // zaokruzivanje broja 
-            float zaokruzeniBroj = float.Round(prosjek);
-
-            Console.WriteLine("Prosjek je zaokruzen na cijeli broj:" + zaokruzeniBroj);
+            for (int i=0; i<NoviNiz.Length; i++)
+            {
+                Console.WriteLine(RedniBroj + " " + "Ispisani broj je: " + NoviNiz[i]);
+                RedniBroj++;
+            }
 
 
         }
