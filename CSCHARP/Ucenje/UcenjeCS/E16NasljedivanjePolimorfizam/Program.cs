@@ -19,10 +19,10 @@ namespace UcenjeCS.E16NasljedivanjePolimorfizam
         {
             Console.WriteLine("Hello from construktor");
 
-            var s = new Smjer();
+            var s = new Smjer(); // ovdje smo kreirali novu objekt ?- da, ovo je instanca klase, objekt je instanca klase, s je objekt
             s.Sifra= 2;
             s.Naziv = "WP";
-
+            // ispisuje 2 i WP
             Console.WriteLine(s.Sifra);
             Console.WriteLine(s.Naziv);
             

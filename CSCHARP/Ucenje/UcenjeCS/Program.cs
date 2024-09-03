@@ -1,9 +1,9 @@
 ﻿
 
 using UcenjeCS;
-
-
-Vjezbanjenizova.Izvedi();
+new UcenjeCS.E16NasljedivanjePolimorfizam.ZavrsniRad.Zadatak();
+//new UcenjeCS.ZavrsniRad.Program();
+//Vjezbanjenizova.Izvedi();
 //Ljubavnikalkulatorrjesenjeprekoniza.Izvedi();
 //Vjezbanjezadataka.Izvedi();
 //new UcenjeCS.E16NasljedivanjePolimorfizam.Program();
