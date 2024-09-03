@@ -1,7 +1,9 @@
 ﻿
 
 using UcenjeCS;
-new UcenjeCS.E16NasljedivanjePolimorfizam.ZavrsniRad.Zadatak();
+
+new UcenjeCS.E17GenericiLambdaEkstenzije.Program();
+//new UcenjeCS.E16NasljedivanjePolimorfizam.ZavrsniRad.Zadatak();
 //new UcenjeCS.ZavrsniRad.Program();
 //Vjezbanjenizova.Izvedi();
 //Ljubavnikalkulatorrjesenjeprekoniza.Izvedi();
