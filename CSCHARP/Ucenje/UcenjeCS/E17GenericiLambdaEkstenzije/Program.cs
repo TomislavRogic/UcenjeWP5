@@ -65,6 +65,10 @@ namespace UcenjeCS.E17GenericiLambdaEkstenzije
             Console.WriteLine(datumi[0]);
             Console.WriteLine(datumi[1]);
 
+            // mogli smo i ovako napisati
+            // List<DateTime> vremena = new List<DateTime>() {
+            //new DateTime(1980, 12, 7), DateTime.Now
+            //};
 
 
 
@@ -83,8 +87,7 @@ namespace UcenjeCS.E17GenericiLambdaEkstenzije
 
 
 
-
-        }
+    }
 
 
 
