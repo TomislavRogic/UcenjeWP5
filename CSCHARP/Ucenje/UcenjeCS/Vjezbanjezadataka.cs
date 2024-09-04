@@ -153,31 +153,69 @@ namespace UcenjeCS
             //Console.WriteLine(niz[2]);
 
             // u polje velicine 100 spremiti brojeve 10, 11, 12, .... i ispisati sve brojeve
-            int[] NoviNiz = new int[100];
+            //int[] NoviNiz = new int[10];
 
-            // nacin 1
-            /* int PocetniBroj = 10;
-            for (int i= 10; i<100;  i++)
-            {
-                NoviNiz[i]= i;
-                Console.WriteLineNoviNiz[i]);
-            } */
+            //// nacin 1
+            // //int PocetniBroj = 10;
+            //for (int i= 10; i<20;  i++) // i = 10
+            //{
+            //    NoviNiz[i-10]= i;
+            //    // NoviNiz[0] = 10
+            //    // NoviNiz[1] = 11
+            //    // NoviNiz[2] = 12
+
+            //    Console.WriteLine(NoviNiz[i]);
+            //}
 
 
             // nacin 2
             // spremanje brojeva
-            int RedniBroj = 1;
+            //int RedniBroj = 1;
+            //    for (int i = 0; i<NoviNiz.Length; i++)
+            //    {
+            //        NoviNiz[i] = i + 10;
+            //    }
+            //    for (int i=0; i<NoviNiz.Length; i++)
+            //    {
+            //        Console.WriteLine(RedniBroj + " " + "Ispisani broj je: " + NoviNiz[i]);
+            //        RedniBroj++;
+            //    }
+
+            int[] NoviNiz = new int[10];
             for (int i = 0; i < NoviNiz.Length; i++)
             {
-                NoviNiz[i] = i + 10;
+                NoviNiz[i] = int.Parse(Console.ReadLine());
             }
-            for (int i=0; i<NoviNiz.Length; i++)
+
+            // 0 + 9
+            // 1 + 8
+            // 2 + 7
+            // 3 + 6
+            // 4 + 5
+
+            int indeksNaPolovici = (int) float.Round(NoviNiz.Length / 2f, MidpointRounding.AwayFromZero);
+            for (int i = 0; i < indeksNaPolovici; i++)
             {
-                Console.WriteLine(RedniBroj + " " + "Ispisani broj je: " + NoviNiz[i]);
-                RedniBroj++;
+                if (i == NoviNiz.Length - 1 - i)
+                {
+                    Console.WriteLine(NoviNiz[i]);
+                }
+                else
+                {
+
+                    int prviBroj = NoviNiz[i];
+                    int drugiBroj = NoviNiz[NoviNiz.Length - 1 - i];
+                    int zbroj = prviBroj + drugiBroj;
+                    Console.WriteLine(zbroj);
+                }
+                // i = 0 => 9 => 9 - i = 9
+                // i = 1 => 8 => 9 - i = 8
+                // i = 2 => 7 => 9 - i = 7
             }
 
-
+            // vel 10 do 5 => 10 / 2 = 5
+            // vel 11 do 6 => 11 / 2 = 5.5
+            // vel 12 do 6 => 12 / 2 = 6
         }
     }
 }
