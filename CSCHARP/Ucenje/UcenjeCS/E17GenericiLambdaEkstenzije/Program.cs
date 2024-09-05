@@ -181,7 +181,7 @@ namespace UcenjeCS.E17GenericiLambdaEkstenzije
             // Func je delegat koji vraca vrijednost, a Action je delegat koji ne vraca vrijednost
 
 
-
+            // ovo je metoda koristenja Func delegata
             Obrada<Smjer> obrada = new Obrada<Smjer>();
             obrada.ListaZaObradu = new List<Smjer>();
             obrada.ListaZaObradu.Add(new Smjer { Sifra = 1, Naziv = "Prvi" });
