@@ -2,8 +2,8 @@
 
 using UcenjeCS;
 
-Instrukcije_Fukcije.Izvedi();
-//new UcenjeCS.E18KonzolnaAplikacija.Izbornik();
+//Instrukcije_Fukcije.Izvedi();
+new UcenjeCS.E18KonzolnaAplikacija.Izbornik();
 //new UcenjeCS.E17GenericiLambdaEkstenzije.Program();
 //new UcenjeCS.E16NasljedivanjePolimorfizam.ZavrsniRad.Zadatak();
 //new UcenjeCS.ZavrsniRad.Program();
