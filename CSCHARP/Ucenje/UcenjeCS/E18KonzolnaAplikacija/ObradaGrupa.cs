@@ -44,22 +44,50 @@ namespace UcenjeCS.E18KonzolnaAplikacija
                     PrikaziSveGrupe();
                     PrikaziIzbornik();
                     break;
-            
+                case 2:
+                    DodajNovuGrupu();
+                    PrikaziIzbornik();
+                    break;
+
+                case 5:
+                    break;
             
             }
-       
-        
-        
-        
-        
-        
-        
-        
+        }
+
+        private void DodajNovuGrupu()
+        {
+            var g = new Grupa();
+            g.Sifra = E11Metode.UcitajCijelibroj("Unesi sifru grupe", 1, int.MaxValue);
+            g.Naziv = Pomocno.UcitajString("Unesi naziv grupe");
+            var ios = Izbornik.ObradaSmjer;
+            ios.PrikaziSveSmjerove();
+            g.Smjer = ios.Smjerovi[
+                E11Metode.UcitajCijelibroj("Odaberi smjer za ovu grupu", 1, ios.Smjerovi.Count) - 1];
+
+            Grupe.Add(g);
         }
 
         private void PrikaziSveGrupe()
         {
-            
+            if (Grupe.Count == 0)
+            {
+                var staraB = Console.BackgroundColor;
+                var staraF = Console.ForegroundColor;
+                Console.BackgroundColor = ConsoleColor.Yellow;
+                Console.ForegroundColor = ConsoleColor.Black;
+                Console.WriteLine("Nema Grupa u bazi");
+
+                Console.BackgroundColor = staraB;
+                Console.ForegroundColor = staraF;
+                return;
+            }
+
+            var rb = 0;// morali smo staviti vanjsku varijablu jer je koristimo u foreach petlji
+            foreach (var e in Grupe)
+            {
+                Console.WriteLine(++rb + ". " + e.Naziv + "(" + e.Smjer?.Naziv + ")");
+            }
         }
 
         private void UcitajTestnePodatke()

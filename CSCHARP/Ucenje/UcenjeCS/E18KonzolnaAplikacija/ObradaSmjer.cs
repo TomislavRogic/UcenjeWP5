@@ -8,7 +8,7 @@ using UcenjeCS.E18KonzolnaAplikacija.model;
 
 namespace UcenjeCS.E18KonzolnaAplikacija
 {
-    internal class ObradaSmjer
+    public class ObradaSmjer
     {
 
         public List<Smjer>  Smjerovi { get; set; }
@@ -103,7 +103,7 @@ namespace UcenjeCS.E18KonzolnaAplikacija
             });
         }
 
-        private void PrikaziSveSmjerove()
+        public void PrikaziSveSmjerove()
         {
             if(Smjerovi.Count == 0)
             {

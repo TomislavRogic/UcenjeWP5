@@ -6,16 +6,19 @@ using System.Threading.Tasks;
 
 namespace UcenjeCS.E18KonzolnaAplikacija
 {
-    internal class Izbornik
+    public class Izbornik
     {
 
         // ako zelimo raditi s svim klasama u svim metodama, onda ju deklariramo na vrhu klase kao property
 
         public ObradaSmjer ObradaSmjer { get; set; }
+        public ObradaGrupa ObradaGrupa { get; set; }
+
         public Izbornik()
         {
             Pomocno.DEV = true;// postavljamo DEV na true, ovo nam koristi
             ObradaSmjer = new ObradaSmjer();
+            ObradaGrupa= new ObradaGrupa(this);
             PrikaziIzbornik();
         }
 
@@ -38,6 +41,11 @@ namespace UcenjeCS.E18KonzolnaAplikacija
             {
                 case 1:
                     ObradaSmjer.PrikaziIzbornik();
+                    Console.Clear(); // ocisti konzolu, stavljamo ju tu jer zelimo ocistiti konzolu nakon sto se vratimo iz ObradaSmjer
+                    PrikaziIzbornik();
+                    break;
+                case 2:
+                    ObradaGrupa.PrikaziIzbornik();
                     Console.Clear(); // ocisti konzolu, stavljamo ju tu jer zelimo ocistiti konzolu nakon sto se vratimo iz ObradaSmjer
                     PrikaziIzbornik();
                     break;
