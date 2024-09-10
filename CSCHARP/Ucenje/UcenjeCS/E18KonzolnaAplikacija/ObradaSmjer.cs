@@ -173,6 +173,18 @@ namespace UcenjeCS.E18KonzolnaAplikacija
                 Vaucer = Pomocno.UcitajBool("Da li je smjer vaučer (DA/NE)", "da"),
                 DatumPromjene = DateTime.Now
             });
+
+            // znas li mi objasniti kodove gore?
+
+            // 1. UcitajRasponBroja - korisnik unosi broj, a mi provjeravamo da li je u rasponu
+            // 2. UcitajString - korisnik unosi string, a mi provjeravamo da li je u rasponu
+            // 3. UcitajDecimalniBroj - korisnik unosi decimalni broj, a mi provjeravamo da li je u rasponu
+            // 4. UcitajDatum - korisnik unosi datum, a mi provjeravamo da li je u rasponu
+            // 5. UcitajBool - korisnik unosi bool, a mi provjeravamo da li je u rasponu
+            // 6. DateTime.Now - uzima trenutno vrijeme
+            // 7. Smjerovi.Add - dodaje novi smjer u listu smjerova
+            
+
         }
     }
 
