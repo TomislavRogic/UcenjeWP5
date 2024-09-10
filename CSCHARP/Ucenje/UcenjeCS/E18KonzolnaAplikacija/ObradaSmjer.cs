@@ -8,122 +8,172 @@ using UcenjeCS.E18KonzolnaAplikacija.model;
 
 namespace UcenjeCS.E18KonzolnaAplikacija
 {
-    public class ObradaSmjer
+    internal class ObradaSmjer
     {
 
-        public List<Smjer>  Smjerovi { get; set; }
+        public List<Smjer> Smjerovi { get; set; }
 
-        public ObradaSmjer() 
+        public ObradaSmjer()
         {
             Smjerovi = new List<Smjer>();
-            if(Pomocno.DEV)
+            if (Pomocno.DEV)
             {
                 UcitajTestnePodatke();
             }
-        
         }
 
         private void UcitajTestnePodatke()
         {
-            Smjerovi.Add(new Smjer { Sifra = 1, Naziv = "Web programiranje" });
-            Smjerovi.Add(new Smjer { Sifra = 2, Naziv = "AAA" });
-            Smjerovi.Add(new Smjer { Sifra = 3, Naziv = "BBB" });
-            Smjerovi.Add(new Smjer { Sifra = 4, Naziv = "CCC" });
-            Smjerovi.Add(new Smjer { Sifra = 5, Naziv = "DDD" });
+            Smjerovi.Add(new() { Naziv = "Web programiranje" });
+            Smjerovi.Add(new() { Naziv = "Web Dizajn" });
+            Smjerovi.Add(new() { Naziv = "Serviser" });
         }
 
         public void PrikaziIzbornik()
         {
-            Console.WriteLine("Rad s smjerovima");
-            Console.WriteLine("1. Prikazi sve smjerove");
-            Console.WriteLine("2. Dodaj novi smjer");
-            Console.WriteLine("3. Promjeni podatke smjera");
-            Console.WriteLine("4. Brisanje smjera");
-            Console.WriteLine("5. Povratak na glavni izbornik");
+            Console.WriteLine("Izbornik za rad s smjerovima");
+            Console.WriteLine("1. Pregled svih smjerova");
+            Console.WriteLine("2. Pregled detalja pojedinog smjera");
+            Console.WriteLine("3. Unos novog smjera");
+            Console.WriteLine("4. Promjena podataka postojećeg smjera");
+            Console.WriteLine("5. Brisanje smjera");
+            Console.WriteLine("6. Povratak na glavni izbornik");
             OdabirOpcijeIzbornika();
         }
 
         private void OdabirOpcijeIzbornika()
         {
-            switch(E11Metode.UcitajCijelibroj("Odaberi stavku izbornika", 1, 5))
+            switch (Pomocno.UcitajRasponBroja("Odaberite stavku izbornika", 1, 6))
             {
                 case 1:
-                    PrikaziSveSmjerove();
+                    PrikaziSmjerove();
                     PrikaziIzbornik();
                     break;
                 case 2:
-                    DodajNoviSmjer();
+                    PregledDetaljaPojedinogSmjera();
                     PrikaziIzbornik();
                     break;
                 case 3:
-                    PromjeniSmjer();
+                    UnosNovogSmjera();
                     PrikaziIzbornik();
                     break;
                 case 4:
-                    ObrisiSmjer();
+                    PromjeniPostojeciSmjer();
                     PrikaziIzbornik();
                     break;
                 case 5:
+                    ObrisiPostojeciSmjer();
+                    PrikaziIzbornik();
                     break;
-
+                case 6:
+                    Console.Clear();
+                    break;
             }
         }
 
-        private void ObrisiSmjer()
+        private void PregledDetaljaPojedinogSmjera()
         {
-            PrikaziSveSmjerove();
-            Smjerovi.RemoveAt(
-                E11Metode.UcitajCijelibroj("Odaberi redni broj smjera za brisanje", 1, Smjerovi.Count) - 1
-                );
-            // Smjerovi.Count koristimo jer se niz smjerova moze mjenjati, a ne zelimo da korisnik unese broj veci od broja smjerova
-            // da smo koristili fiksno 5, mogli bi dobiti IndexOutOfRangeException, jer korisnik moze unijeti 6, a niz ima 5 elemenata
-        }
-        //MVP Minimum Viable Product- to je najmanje sto moramo napraviti da bi aplikacija radila, a onda
-        //dodajemo nove funkcionalnosti
-
-        private void PromjeniSmjer()
-        {
-            PrikaziSveSmjerove();
+            PrikaziSmjerove();
             var s = Smjerovi[
-                E11Metode.UcitajCijelibroj("Odaberi redni broj smjera", 1, Smjerovi.Count) - 1 // -1 jer korisniku prikazujemo od 1
-                                                                                               // , a indeksi pocinju od 0
+                Pomocno.UcitajRasponBroja("Odaberi redni broj smjera za detalje", 1, Smjerovi.Count) - 1
                 ];
-
-            s.Sifra= E11Metode.UcitajCijelibroj("Unesi novu vrijednost sifre (" + s.Sifra + ")", 1, int.MaxValue);
-            s.Naziv= Pomocno.UcitajString("Unesi novi naziv (" + s.Naziv + ")");
+            Console.WriteLine("--------------------");
+            Console.WriteLine("Detalji smjera:");
+            Console.WriteLine("Šifra: " + s.Sifra);
+            Console.WriteLine("Naziv: " + s.Naziv);
+            Console.WriteLine("Trajanje: " + s.Trajanje);
+            Console.WriteLine("Cijena: " + s.Cijena);
+            Console.WriteLine("Izvodi se od: " + s.IzvodiSeOd.Value.ToString("dd. MM. yyyy."));
+            Console.WriteLine("Vaučer: " + ((bool)s.Vaucer ? "DA" : "NE"));
+            Console.WriteLine("Datum zadnje izmjene: " + s.DatumPromjene.Value.ToString("dd. MM. yyyy. HH:mm:ss"));
+            Console.WriteLine("--------------------");
         }
 
-        private void DodajNoviSmjer()
+        private void ObrisiPostojeciSmjer()
         {
-            Smjerovi.Add(new()
+            PrikaziSmjerove();
+            var odabrani = Smjerovi[Pomocno.UcitajRasponBroja("Odaberi redni broj smjera za Brisanje",
+                1, Smjerovi.Count) - 1];
+
+            if (Pomocno.UcitajBool("Sigurno obrisati " + odabrani.Naziv + "? (DA/NE)", "da"))
             {
-                Sifra=E11Metode.UcitajCijelibroj("Unesi sifru smjera", 1, int.MaxValue),
-                Naziv=Pomocno.UcitajString("Unesi naziv smjera")
-
-            });
-        }
-
-        public void PrikaziSveSmjerove()
-        {
-            if(Smjerovi.Count == 0)
-            {
-                var staraB= Console.BackgroundColor;
-                var staraF=Console.ForegroundColor;
-                Console.BackgroundColor = ConsoleColor.Yellow;
-                Console.ForegroundColor = ConsoleColor.Black;
-                Console.WriteLine("Nema smjerova u bazi");
-
-                Console.BackgroundColor = staraB;
-                Console.ForegroundColor = staraF;
-                return;
+                Smjerovi.Remove(odabrani);
             }
 
-            var rb = 0;// morali smo staviti vanjsku varijablu jer je koristimo u foreach petlji
-           foreach(var s in Smjerovi)
+        }
+
+        private void PromjeniPostojeciSmjer()
+        {
+            PrikaziSmjerove();
+            var odabrani = Smjerovi[Pomocno.UcitajRasponBroja("Odaberi redni broj smjera za promjenu",
+                1, Smjerovi.Count) - 1];
+
+            if (Pomocno.UcitajRasponBroja("1. Mjenjaš sve\n2. Pojedinačna promjena", 1, 2) == 1)
+            {
+                // poziv API-u da se javi tko ovo koristi
+                odabrani.Sifra = Pomocno.UcitajRasponBroja("Unesi šifru smjera", 1, int.MaxValue);
+                odabrani.Naziv = Pomocno.UcitajString("Unesi naziv smjera", 50, true);
+                odabrani.Trajanje = Pomocno.UcitajRasponBroja("Unesi trajanje smjera", 1, 500);
+                odabrani.Cijena = Pomocno.UcitajDecimalniBroj("Unesi cijenu smjera", 0, 10000);
+                odabrani.IzvodiSeOd = Pomocno.UcitajDatum("Unesi datum od kada se izvodi smjer", true);
+                odabrani.Vaucer = Pomocno.UcitajBool("Da li je smjer vaučer (DA/NE)", "da");
+
+            }
+            else
+            {
+                // poziv API-u da se javi tko ovo koristi
+                switch (Pomocno.UcitajRasponBroja("1. Šifra\n2. Naziv\n3. Trajanje\n4. Izvodi se od\n" +
+                    "5. Vaučer", 1, 5))
+                {
+                    case 1:
+                        odabrani.Sifra = Pomocno.UcitajRasponBroja("Unesi šifru smjera", 1, int.MaxValue);
+                        break;
+                    case 2:
+                        odabrani.Naziv = Pomocno.UcitajString("Unesi naziv smjera", 50, true);
+                        break;
+                    // ... ostali
+                    case 5:
+                        odabrani.Vaucer = Pomocno.UcitajBool("Da li je smjer vaučer (DA/NE)", "da");
+                        break;
+
+                }
+            }
+            odabrani.DatumPromjene = DateTime.Now;
+
+
+
+
+            // gornjih 6 linija igra istu ulogu kao na 93 - 98. Izvući u metodu
+
+        }
+
+        public void PrikaziSmjerove()
+        {
+            Console.WriteLine("*****************************");
+            Console.WriteLine("Smjerovi u aplikaciji");
+            int rb = 0;
+            foreach (var s in Smjerovi)
             {
                 Console.WriteLine(++rb + ". " + s.Naziv);
             }
+            Console.WriteLine("****************************");
+        }
+
+        private void UnosNovogSmjera()
+        {
+            Console.WriteLine("***************************");
+            Console.WriteLine("Unesite tražene podatke o smjeru");
+            Smjerovi.Add(new()
+            {
+                Sifra = Pomocno.UcitajRasponBroja("Unesi šifru smjera", 1, int.MaxValue),
+                Naziv = Pomocno.UcitajString("Unesi naziv smjera", 50, true),
+                Trajanje = Pomocno.UcitajRasponBroja("Unesi trajanje smjera", 1, 500),
+                Cijena = Pomocno.UcitajDecimalniBroj("Unesi cijenu smjera", 0, 10000),
+                IzvodiSeOd = Pomocno.UcitajDatum("Unesi datum od kada se izvodi smjer", true),
+                Vaucer = Pomocno.UcitajBool("Da li je smjer vaučer (DA/NE)", "da"),
+                DatumPromjene = DateTime.Now
+            });
         }
     }
-    
+
 }

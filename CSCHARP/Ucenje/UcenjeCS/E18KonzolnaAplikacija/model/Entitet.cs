@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UcenjeCS.E18KonzolnaAplikacija.model
 {
-    public abstract class Entitet
+    internal abstract class Entitet
     {
         public int? Sifra { get; set; }
 
