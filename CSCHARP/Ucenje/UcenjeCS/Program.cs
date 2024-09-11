@@ -1,9 +1,9 @@
 ﻿
 
 using UcenjeCS;
-
+//Z102Ljubavnikalkulator.Izvedi();
 //Instrukcije_Fukcije.Izvedi();
-new UcenjeCS.E18KonzolnaAplikacija.Izbornik();
+//new UcenjeCS.E18KonzolnaAplikacija.Izbornik();
 //new UcenjeCS.E17GenericiLambdaEkstenzije.Program();
 //new UcenjeCS.E16NasljedivanjePolimorfizam.ZavrsniRad.Zadatak();
 //new UcenjeCS.ZavrsniRad.Program();
@@ -13,7 +13,6 @@ new UcenjeCS.E18KonzolnaAplikacija.Izbornik();
 //new UcenjeCS.E16NasljedivanjePolimorfizam.Program();
 //UcenjeCS.E15KlasaObjekt.Program.Izvedi();   
 //E0609Ciklickatablicagoredesnousmjerukontrakazaljkenasatu.Izvedi();
-//Z102Ljubavnikalkulator.Izvedi();
 //Z101Ljubavnikalkulatorvjezba.Izvedi();
 //E0608Ciklickatablicagorelijevousmjerukontrakazaljkenasatu.Izvedi();
 //E0607Ciklickatablicadoledesnousmjerukontrakazaljkenasatu.Izvedi();
@@ -28,7 +27,7 @@ new UcenjeCS.E18KonzolnaAplikacija.Izbornik();
 //E11Z1.Izvedi();
 //E11Metode.Izvedi();
 //E11Metode.Tip1(); // ne vidimo ovu metodu jer je private
-//Z1LjubavniTrokut.Izvedi();
+Z1LjubavniTrokut.Izvedi();
 //E0901Vjezba.Izvedi();
 //E06Z1CiklickatablicaClockwise.Izvedi();
 //E01Z4.Izvedi();
