@@ -2,8 +2,8 @@
 
 using UcenjeCS;
 
-
-E01VjezbanjeZadatakSRekursijom.Izvedi();
+E14GeneratorLozinki.Izvedi();
+//E01VjezbanjeZadatakSRekursijom.Izvedi();
 //Z102Ljubavnikalkulator.Izvedi();
 //Instrukcije_Fukcije.Izvedi();
 //new UcenjeCS.E18KonzolnaAplikacija.Izbornik();
