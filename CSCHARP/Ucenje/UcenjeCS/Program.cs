@@ -1,6 +1,9 @@
 ﻿
 
 using UcenjeCS;
+
+
+E01VjezbanjeZadatakSRekursijom.Izvedi();
 //Z102Ljubavnikalkulator.Izvedi();
 //Instrukcije_Fukcije.Izvedi();
 //new UcenjeCS.E18KonzolnaAplikacija.Izbornik();
@@ -27,7 +30,7 @@ using UcenjeCS;
 //E11Z1.Izvedi();
 //E11Metode.Izvedi();
 //E11Metode.Tip1(); // ne vidimo ovu metodu jer je private
-Z1LjubavniTrokut.Izvedi();
+//Z1LjubavniTrokut.Izvedi();
 //E0901Vjezba.Izvedi();
 //E06Z1CiklickatablicaClockwise.Izvedi();
 //E01Z4.Izvedi();
