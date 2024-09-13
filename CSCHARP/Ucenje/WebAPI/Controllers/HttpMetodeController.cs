@@ -74,7 +74,7 @@ namespace WebAPI.Controllers
                 return BadRequest(new { greska = true, poruka = "Nije dobar parametar" });
             }
             osoba.Prezime = "g." + osoba.Prezime;
-            return StatusCode(201, osoba);
+            return StatusCode(StatusCodes.Status206PartialContent, osoba);
         }
         // ovdje zavrsava ruta
 
@@ -85,5 +85,6 @@ namespace WebAPI.Controllers
             return NotFound(new { id = id, poruka = "Ne mogu pronaci", greska = true }); 
                 
         } 
+        // ovdje zavrsava ruta
     }
 }
