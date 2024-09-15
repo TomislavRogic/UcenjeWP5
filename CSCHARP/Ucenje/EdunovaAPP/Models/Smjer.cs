@@ -6,7 +6,7 @@ namespace EdunovaAPP.Models
     {
 
         public string? Naziv { get; set; }
-        [Column("brojsati")]
+        [Column("brojsati")] // ovo nuzno u zavrsnim radovima nije potrebno
         public int? Trajanje { get; set; }
         public decimal? Cijena { get; set; }
         public DateTime? IzvodiSeOd { get; set; }
