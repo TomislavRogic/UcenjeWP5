@@ -2,7 +2,9 @@
 
 using UcenjeCS;
 
-E14GeneratorLozinki.Izvedi();
+
+new UcenjeCS.TerminiProdajeVozilaKonzolnaAplikacija.GlavniIzbornik();
+//E14GeneratorLozinki.Izvedi();
 //E01VjezbanjeZadatakSRekursijom.Izvedi();
 //Z102Ljubavnikalkulator.Izvedi();
 //Instrukcije_Fukcije.Izvedi();
