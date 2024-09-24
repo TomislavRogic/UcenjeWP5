@@ -3,7 +3,9 @@
 using UcenjeCS;
 
 
-new UcenjeCS.TerminiProdajeVozilaKonzolnaAplikacija.GlavniIzbornik();
+E03FunkcijaKojaVracaVrijednost.Izvedi();
+//E02Instrukcije.Izvedi();
+//new UcenjeCS.TerminiProdajeVozilaKonzolnaAplikacija.GlavniIzbornik();
 //E14GeneratorLozinki.Izvedi();
 //E01VjezbanjeZadatakSRekursijom.Izvedi();
 //Z102Ljubavnikalkulator.Izvedi();
