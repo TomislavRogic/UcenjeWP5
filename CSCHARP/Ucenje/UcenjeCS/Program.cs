@@ -2,8 +2,8 @@
 
 using UcenjeCS;
 
-
-E03FunkcijaKojaVracaVrijednost.Izvedi();
+VjezbanjeRekurzivnaFunkcija.Izvedi();
+//E03FunkcijaKojaVracaVrijednost.Izvedi();
 //E02Instrukcije.Izvedi();
 //new UcenjeCS.TerminiProdajeVozilaKonzolnaAplikacija.GlavniIzbornik();
 //E14GeneratorLozinki.Izvedi();
