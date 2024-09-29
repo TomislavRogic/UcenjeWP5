@@ -1,0 +1,2 @@
+U terminalu direktorija Frontend izvesti
+npm install react-bootstrap bootstrap
