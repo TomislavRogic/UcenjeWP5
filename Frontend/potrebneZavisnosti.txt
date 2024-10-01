@@ -1,2 +1,5 @@
 U terminalu direktorija Frontend izvesti
 npm install react-bootstrap bootstrap
+npm install react-router-dom
+
+npm install axios
