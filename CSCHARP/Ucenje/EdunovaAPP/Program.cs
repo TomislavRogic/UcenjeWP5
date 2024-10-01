@@ -1,4 +1,4 @@
-using EdunovaAPP.Data;
+﻿using EdunovaAPP.Data;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,8 +16,21 @@ builder.Services.AddDbContext<EdunovaContext>(opcije =>
 {
     opcije.UseSqlServer(builder.Configuration.GetConnectionString("EdunovaContext"));
 });
-// s ovom linijom koda smo dodali bazu podataka u aplikaciju, na na?in da smo dodali DbContext, a onda smo dodali DbContext
-// u servise aplikacije
+// s ovom linijom koda smo dodali bazu podataka u aplikaciju, na nacin da smo dodali DbContext, a onda smo dodali DbContext
+// u servise // Svi se od svuda na sve moguæe naèine mogu spojitina naš API
+// Čitati https://code-maze.com/aspnetcore-webapi-best-practices/
+builder.Services.AddCors(opcije =>
+{
+    opcije.AddPolicy("CorsPolicy",
+        builder =>
+            builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()
+    );
+
+});
+
+
+
+
 
 var app = builder.Build();
 
@@ -37,5 +50,6 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+app.UseCors("CorsPolicy");
 
 app.Run();
