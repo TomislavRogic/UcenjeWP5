@@ -1,8 +1,8 @@
 ﻿
 
 using UcenjeCS;
-
-VjezbanjeRekurzivnaFunkcija.Izvedi();
+InstrukcijeTryCatch.Izvedi();
+//VjezbanjeRekurzivnaFunkcija.Izvedi();
 //E03FunkcijaKojaVracaVrijednost.Izvedi();
 //E02Instrukcije.Izvedi();
 //new UcenjeCS.TerminiProdajeVozilaKonzolnaAplikacija.GlavniIzbornik();

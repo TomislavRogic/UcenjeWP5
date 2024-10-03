@@ -17,7 +17,8 @@ namespace UcenjeCS
             //IspisiBok(3);
 
 
-            Console.WriteLine(IzracunajFaktorijelu(3));
+            //Console.WriteLine(IzracunajFaktorijelu(3));
+            Console.WriteLine(Fibbonacci(7));
         }
 
         public static void IspisiBok(int broj)
@@ -54,5 +55,17 @@ namespace UcenjeCS
         // F(4) = F(3) + F(2)
         // F(4) = F(3) + 1 => F(3) = 1 * 1
         // Fin = 1, 1, 2, 3, 5, 8, 13
+        public static int Fibbonacci(int n)
+        {
+            if ( n == 2 || n == 1)
+            {
+                return 1;
+            }
+
+            return Fibbonacci(n - 1) + Fibbonacci(n - 2);
+        }
+         // 4 => F(3) + F(2)
+         //       > F(2) + F(1) = 1 + 1 = 2
+         //        2 + 1 = 3
     }
 }
