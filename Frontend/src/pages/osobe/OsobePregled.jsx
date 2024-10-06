@@ -21,15 +21,17 @@ export default function OsobePregled() {
         dohvatiOsobe();
     }, []);
 
-    function obrisi(sifra) {
+    function obrisi(sifraosoba) {
+        console.log('Brisanje osobe s šifrom:', sifraosoba); // Dodano za dijagnostiku
         if (!confirm('Sigurno obrisati')) {
             return;
         }
-        brisanjeOsoba(sifra);
+        brisanjeOsoba(sifraosoba);
     }
 
-    async function brisanjeOsoba(sifra) {
-        const odgovor = await OsobaService.brisanje(sifra);
+    async function brisanjeOsoba(sifraosoba) {
+        console.log('Poziv API-ja za brisanje s šifrom:', sifraosoba); // Dodano za dijagnostiku
+        const odgovor = await OsobaService.brisanje(sifraosoba);
         if (odgovor.greska) {
             alert(odgovor.poruka);
             return;
@@ -52,17 +54,20 @@ export default function OsobePregled() {
                     </tr>
                 </thead>
                 <tbody>
-                    {osobe && osobe.map((osoba, index) => (
-                        <tr key={index}>
-                            <td>{osoba.email}</td>
-                            <td>{osoba.ime}</td>
-                            <td>{osoba.prezime}</td>
-                            <td>
-                            <Button variant="danger" size="sm" className="w-100 mb-2" onClick={() => obrisi(osoba.sifra)}>Obriši</Button>
-                            <Button variant="primary" size="sm" className="w-100" onClick={() => navigate(`/osobe/${osoba.sifra}`)}>Promjena</Button>
-                            </td>
-                        </tr>
-                    ))}
+                    {osobe && osobe.map((osoba, index) => {
+                        console.log('Osoba:', osoba); // Dodano za dijagnostiku
+                        return (
+                            <tr key={index}>
+                                <td>{osoba.email}</td>
+                                <td>{osoba.ime}</td>
+                                <td>{osoba.prezime}</td>
+                                <td>
+                                    <Button variant="danger" size="sm" className="w-100 mb-2" onClick={() => obrisi(osoba.sifraosoba)}>Obriši</Button>
+                                    <Button variant="primary" size="sm" className="w-100" onClick={() => navigate(`/osobe/${osoba.sifraosoba}`)}>Promjena</Button>
+                                </td>
+                            </tr>
+                        );
+                    })}
                 </tbody>
             </Table>
         </>
