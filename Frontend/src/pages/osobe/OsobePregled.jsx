@@ -58,9 +58,8 @@ export default function OsobePregled() {
                             <td>{osoba.ime}</td>
                             <td>{osoba.prezime}</td>
                             <td>
-                                <Button variant="danger" onClick={() => obrisi(osoba.sifra)}>Obriši</Button>
-                                &nbsp;&nbsp;&nbsp;
-                                <Button variant="primary" onClick={() => navigate(`/osobe/${osoba.sifra}`)}>Promjena</Button>
+                            <Button variant="danger" size="sm" className="w-100 mb-2" onClick={() => obrisi(osoba.sifra)}>Obriši</Button>
+                            <Button variant="primary" size="sm" className="w-100" onClick={() => navigate(`/osobe/${osoba.sifra}`)}>Promjena</Button>
                             </td>
                         </tr>
                     ))}
