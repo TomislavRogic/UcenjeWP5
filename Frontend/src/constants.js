@@ -4,7 +4,7 @@ export const RouteNames={
 HOME : '/',
 OSOBA_PREGLED: '/osobe',
 OSOBA_DODAJ: '/osobe/dodaj',
-OSOBA_PROMJENA: '/osobe/promjena/:sifra',
+OSOBA_PROMJENA: '/osobe/:sifra'
 
 }
 

@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import OsobaService from "../../services/OsobaService";
 import { Button, Table } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { RouteNames } from "../../constants";
 
-
 export default function OsobePregled() {
-    const [osobe, setOsobe] = useState();
+    const navigate = useNavigate();
+    const [osobe, setOsobe] = useState([]);
 
     async function dohvatiOsobe() {
         const odgovor = await OsobaService.get();
@@ -17,11 +17,9 @@ export default function OsobePregled() {
         setOsobe(odgovor.poruka);
     }
 
-    // Ovaj hook (kuka) se izvodi dolaskom na stranicu Stanovi
     useEffect(() => {
         dohvatiOsobe();
     }, []);
-
 
     function obrisi(sifra) {
         if (!confirm('Sigurno obrisati')) {
@@ -39,17 +37,12 @@ export default function OsobePregled() {
         dohvatiOsobe();
     }
 
-
-
-
-
-
     return (
         <>
-           <Link to={RouteNames.OSOBA_DODAJ} className="btn btn-success siroko">
+            <Link to={RouteNames.OSOBA_DODAJ} className="btn btn-success siroko">
                 Dodaj novu osobu
             </Link>
-             <Table striped bordered hover responsive>
+            <Table striped bordered hover responsive>
                 <thead>
                     <tr>
                         <th>Email</th>
@@ -66,6 +59,8 @@ export default function OsobePregled() {
                             <td>{osoba.prezime}</td>
                             <td>
                                 <Button variant="danger" onClick={() => obrisi(osoba.sifra)}>Obriši</Button>
+                                &nbsp;&nbsp;&nbsp;
+                                <Button variant="primary" onClick={() => navigate(`/osobe/${osoba.sifra}`)}>Promjena</Button>
                             </td>
                         </tr>
                     ))}

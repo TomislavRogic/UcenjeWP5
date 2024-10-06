@@ -1,4 +1,3 @@
-import { useState } from "react";
 import OsobaService from "../../services/OsobaService";
 import { Button, Row, Col, Form } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
@@ -6,23 +5,9 @@ import { RouteNames } from "../../constants";
 
 export default function OsobeDodaj() {
     const navigate = useNavigate();
-    const [formData,setFormData] = useState({
-        email: '',
-        ime: '',
-        prezime: '', 
-    });
 
-    function handleChange(e) {
-        const { name, value } = e.target;
-        setFormData(prevState => ({
-            ...prevState,
-            [name]: value
-        }));
-    }
-
-    async function obradiSubmit(e) {
-        e.preventDefault();
-        const odgovor = await OsobaService.dodaj(formData);
+    async function dodaj(osoba) {
+        const odgovor = await OsobaService.dodaj(osoba);
         if (odgovor.greska) {
             alert(odgovor.poruka);
             return;
@@ -30,38 +15,33 @@ export default function OsobeDodaj() {
         navigate(RouteNames.OSOBA_PREGLED);
     }
 
+    function obradiSubmit(e) {
+        e.preventDefault();
+        let podaci = new FormData(e.target);
+        dodaj({
+            email: podaci.get('email'),
+            ime: podaci.get('ime'),
+            prezime: podaci.get('prezime')
+        });
+    }
+
     return (
         <>
             Dodavanje osobe
             <Form onSubmit={obradiSubmit}>
-            <Form.Group controlId="email">
+                <Form.Group controlId="email">
                     <Form.Label>Email</Form.Label>
-                    <Form.Control 
-                    type="email" 
-                    name="email" 
-                    value={formData.email}
-                    onChange={handleChange}
-                    required />
+                    <Form.Control type="email" name="email" required />
                 </Form.Group>
 
                 <Form.Group controlId="ime">
                     <Form.Label>Ime</Form.Label>
-                    <Form.Control 
-                    type="text" 
-                    name="ime"
-                    value={formData.ime}
-                    onChange={handleChange} 
-                    required />
+                    <Form.Control type="text" name="ime" required />
                 </Form.Group>
 
                 <Form.Group controlId="prezime">
                     <Form.Label>Prezime</Form.Label>
-                    <Form.Control 
-                    type="text" 
-                    name="prezime" 
-                    value={formData.prezime}
-                    onChange={handleChange}
-                    required />
+                    <Form.Control type="text" name="prezime" required />
                 </Form.Group>
 
                 <Row className="akcije">
