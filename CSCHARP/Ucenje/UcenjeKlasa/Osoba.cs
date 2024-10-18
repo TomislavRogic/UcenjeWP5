@@ -9,14 +9,14 @@ namespace UcenjeKlasa
     internal class Osoba
     {
         private string ime;
-        private string Ime;
+        private string Prezime;
 
         public string Ime { get; private set; } // raspisati i validirati
 
         public Osoba(string Ime, string Prezime)
         {
             this.Ime = Ime;
-            this.Ime = Prezime;
+            this.Prezime = Prezime;
         }
 
         public Osoba(string ime)
